@@ -1,13 +1,8 @@
-﻿nombre;ICAO;IATA;coordenada;ciudad;;;
-Aeropuerto Internacional Arturo Merino Benitez;SCEL;SCL;28;Pudahuel;;;
-Aeropuerto de La Plata;SADL;LPG;37;La Plata;;;
-Aeropuerto El Loa;SCCF;CJC;41;Calama;;;
-Aeropuerto Internacional La Araucanía ;SCQP;ZCO;59;Freire;;;
-Aeropuerto Internacional Diego Aracena;SCDA;IQQ;73;Iquique;;;
-Aeropuerto Internacional de Galeão;SBGL;GIG;60;Río de Janeiro;;;
-Aeropuerto Internacional de Miami;KMIA;MIA;22;Miami;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
-;;;;;;;
+﻿nombre;ICAO;IATA;coordenada;ciudad
+Aeropuerto Internacional Arturo Merino Benitez;SCEL;SCL;28;Pudahuel
+Aeropuerto de La Plata;SADL;LPG;37;La Plata
+Aeropuerto El Loa;SCCF;CJC;41;Calama
+Aeropuerto Internacional La Araucanía ;SCQP;ZCO;59;Freire
+Aeropuerto Internacional Diego Aracena;SCDA;IQQ;73;Iquique
+Aeropuerto Internacional de Galeão;SBGL;GIG;60;Río de Janeiro
+Aeropuerto Internacional de Miami;KMIA;MIA;22;Miami
