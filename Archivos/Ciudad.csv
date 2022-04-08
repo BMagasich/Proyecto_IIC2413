@@ -1,7 +1,7 @@
-﻿nombre;pais
-Pudahuel;Chile
-La Plata;Argentina
-Calama;Chile
-Freire;Chile
-Iquique;Chile
-Río de Janeiro;Brasil
+﻿id;nombre;pais
+1;Pudahuel;Chile
+2;La Plata;Argentina
+3;Calama;Chile
+4;Freire;Chile
+5;Iquique;Chile
+6;Río de Janeiro;Brasil
