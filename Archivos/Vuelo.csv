@@ -1,9 +1,9 @@
 ﻿n_vuelo;fecha_salida;fecha_llegada;velocidad;altitud;ruta;aeronave_id;aerodromo_salida;aerodromo_llegada;piloto_id;copiloto_id;tripulacion_id;estado
-LAN123;06-04-2022;07-04-2022;895;12300;1;1;Aeropuerto Internacional Arturo Merino Benitez;Aeropuerto Internacional Diego Aracena;5;1;1;publicado
-SKY856;07-04-2022;08-04-2022;885;11600;1;2;Aeropuerto de La Plata;Aeropuerto Internacional La Araucanía ;4;2;3;borrador
-JAT254;08-04-2022;09-04-2022;810;12000;1;6;Aeropuerto El Loa;Aeropuerto Internacional de Miami;6;3;4;pendiente
-LAN572;09-04-2022;10-04-2022;900;12800;4;1;Aeropuerto Internacional La Araucanía ;Aeropuerto Internacional Arturo Merino Benitez;1;4;6;publicado
-LAN321;10-04-2022;11-04-2022;789;10500;2;5;Aeropuerto Internacional Diego Aracena;Aeropuerto Internacional Arturo Merino Benitez;8;5;5;aceptado
-JAT512;11-04-2022;12-04-2022;836;11700;4;6;Aeropuerto Internacional de Galeão;Aeropuerto de La Plata;7;6;2;aceptado
-SKY111;12-04-2022;13-04-2022;847;12100;3;4;Aeropuerto Internacional de Miami;Aeropuerto Internacional de Galeão;2;1;1;rechazado
-JAT251;13-04-2022;14-04-2022;891;12600;2;3;Aeropuerto Internacional Diego Aracena;Aeropuerto El Loa;3;2;6;publicado
+LAN123;2022-04-06;2022-04-07;895;12300;1;1;Aeropuerto Internacional Arturo Merino Benitez;Aeropuerto Internacional Diego Aracena;5;1;1;publicado
+SKY856;2022-04-07;2022-04-08;885;11600;1;2;Aeropuerto de La Plata;Aeropuerto Internacional La Araucanía ;4;2;3;borrador
+JAT254;2022-04-08;2022-04-09;810;12000;1;6;Aeropuerto El Loa;Aeropuerto Internacional de Miami;6;3;4;pendiente
+LAN572;2022-04-09;2022-04-10;900;12800;4;1;Aeropuerto Internacional La Araucanía ;Aeropuerto Internacional Arturo Merino Benitez;1;4;6;publicado
+LAN321;2022-04-10;2022-04-11;789;10500;2;5;Aeropuerto Internacional Diego Aracena;Aeropuerto Internacional Arturo Merino Benitez;8;5;5;aceptado
+JAT512;2022-04-11;2022-04-12;836;11700;4;6;Aeropuerto Internacional de Galeão;Aeropuerto de La Plata;7;6;2;aceptado
+SKY111;2022-04-12;2022-04-13;847;12100;3;4;Aeropuerto Internacional de Miami;Aeropuerto Internacional de Galeão;2;1;1;rechazado
+JAT251;2022-04-13;2022-04-14;891;12600;2;3;Aeropuerto Internacional Diego Aracena;Aeropuerto El Loa;3;2;6;publicado
