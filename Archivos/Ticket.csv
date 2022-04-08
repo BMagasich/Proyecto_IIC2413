@@ -1,0 +1,9 @@
+﻿id ;n_vuelo;n_asiento;clase;comida_maleta;costo_id
+1;LAN123;24;Primera;No;3
+2;SKY856;37;Primera;Si;3
+3;JAT254;41;Segunda;Si;4
+4;LAN572;25;Primera;Si;1
+5;LAN321;12;Segunda ;No;2
+6;JAT512;17;Segunda;Si;5
+7;SKY111;29;Segunda;No;1
+8;JAT251;33;Primera;Si;6
