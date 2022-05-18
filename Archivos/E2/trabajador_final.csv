@@ -433,7 +433,6 @@
 48;Alex Walsh;1985-12-12;W59287703;LAW;40;Tripulante de Cabina
 4;Diane Swanson;1974-02-14;F08731569;COG;111;Tripulante de Cabina
 22;Rodney Wilson;1973-10-18;R08362516;COG;89;Tripulante de Cabina
-38;Gabriel Palmer;1981-08-18;O88716397;UAN;99;Piloto              
 46;Heather Arnold;1999-01-10;Y81323264;UAN;30;Tripulante de Cabina
 45;Jill Haas;1986-04-10;U50608611;MPH;48;Paramedico
 46;Heather Arnold;1999-01-10;Y81323264;KAI;136;Tripulante de Cabina
@@ -451,7 +450,6 @@
 52;Sara Sims;1999-07-10;F00773862;ETA;114;Paramedico
 30;Daniel Callahan;1987-09-13;X88103341;XLE;64;Paramedico
 48;Alex Walsh;1985-12-12;W59287703;LAW;48;Tripulante de Cabina
-38;Gabriel Palmer;1981-08-18;O88716397;LUD;99;Piloto              
 48;Alex Walsh;1985-12-12;W59287703;AZI;40;Tripulante de Cabina
 16;Tracey Harris;1978-06-05;C97271665;XLE;95;Tripulante de Cabina
 51;Kristina Gilmore;1985-12-13;B29047250;NCY;96;Tripulante de Cabina
@@ -769,7 +767,6 @@
 52;Sara Sims;1999-07-10;F00773862;LAW;13;Paramedico
 49;Kenneth Brady;1981-11-06;O21522167;KAI;102;Paramedico
 2;Melissa Jimenez;1998-12-18;W08204144;BTA;46;Tripulante de Cabina
-38;Gabriel Palmer;1981-08-18;O88716397;LUD;99;Piloto              
 2;Melissa Jimenez;1998-12-18;W08204144;KAI;26;Tripulante de Cabina
 22;Rodney Wilson;1973-10-18;R08362516;AZI;74;Tripulante de Cabina
 50;Adam Herrera;1976-12-04;Y37241205;BTA;95;Paramedico
@@ -866,7 +863,6 @@
 4;Diane Swanson;1974-02-14;F08731569;LAW;129;Tripulante de Cabina
 50;Adam Herrera;1976-12-04;Y37241205;UAN;37;Paramedico
 22;Rodney Wilson;1973-10-18;R08362516;COG;131;Tripulante de Cabina
-3;Linda Paul;1983-01-12;L91489362;;;
 47;Michael Compton;1980-01-07;T63857772;EAL;90;Paramedico
 2;Melissa Jimenez;1998-12-18;W08204144;IBE;68;Tripulante de Cabina
 52;Sara Sims;1999-07-10;F00773862;LAW;114;Paramedico
@@ -984,7 +980,6 @@
 58;Samuel Jimenez;1984-01-07;B79815379;LRC;1;Tripulante de Cabina
 12;Ronnie Moore;1997-01-12;L28170812;LAW;3;Tripulante de Cabina
 20;James Singleton;1977-08-12;U46471214;LAM;110;Paramedico
-38;Gabriel Palmer;1981-08-18;O88716397;EAL;99;Piloto              
 12;Ronnie Moore;1997-01-12;L28170812;ADC;61;Tripulante de Cabina
 19;Desiree Williams;1993-03-19;Z32250364;LUD;10;Tripulante de Cabina
 43;Rebecca Valenzuela;1971-08-18;G17571521;BTA;127;Paramedico
@@ -1363,7 +1358,6 @@
 12;Ronnie Moore;1997-01-12;L28170812;LAW;80;Tripulante de Cabina
 51;Kristina Gilmore;1985-12-13;B29047250;NCY;14;Tripulante de Cabina
 39;Patricia Norris;1974-12-08;Y69764268;QAF;106;Tripulante de Cabina
-3;Linda Paul;1983-01-12;L91489362;;;
 58;Samuel Jimenez;1984-01-07;B79815379;ADC;80;Tripulante de Cabina
 2;Melissa Jimenez;1998-12-18;W08204144;LAW;2;Tripulante de Cabina
 18;Michael Chavez;1976-08-28;O16330677;BTA;76;Tripulante de Cabina
@@ -1483,7 +1477,6 @@
 46;Heather Arnold;1999-01-10;Y81323264;LUD;115;Tripulante de Cabina
 35;Francisco Rich;1996-02-21;D89562085;QAF;93;Paramedico
 46;Heather Arnold;1999-01-10;Y81323264;KAI;43;Tripulante de Cabina
-38;Gabriel Palmer;1981-08-18;O88716397;UAN;99;Piloto              
 47;Michael Compton;1980-01-07;T63857772;LAM;98;Paramedico
 11;David Tran;1975-08-07;B62958600;LAT;62;Tripulante de Cabina
 39;Patricia Norris;1974-12-08;Y69764268;ADC;16;Tripulante de Cabina
@@ -1512,7 +1505,6 @@
 5;Miguel Oliver;1992-08-27;E21376006;LUD;141;Tripulante de Cabina
 47;Michael Compton;1980-01-07;T63857772;COG;90;Paramedico
 16;Tracey Harris;1978-06-05;C97271665;ETA;112;Tripulante de Cabina
-3;Linda Paul;1983-01-12;L91489362;;;
 42;Deborah Martinez;1987-02-03;G18065401;LRC;19;Tripulante de Cabina
 19;Desiree Williams;1993-03-19;Z32250364;MPH;119;Tripulante de Cabina
 40;Brian Berry;1998-12-22;N92528667;LAW;96;Paramedico
@@ -1532,7 +1524,6 @@
 40;Brian Berry;1998-12-22;N92528667;LAT;96;Paramedico
 47;Michael Compton;1980-01-07;T63857772;LAM;129;Paramedico
 56;Isaiah Riley;1986-09-18;W12727804;LAM;139;Tripulante de Cabina
-38;Gabriel Palmer;1981-08-18;O88716397;EAL;99;Piloto              
 51;Kristina Gilmore;1985-12-13;B29047250;KAI;97;Tripulante de Cabina
 19;Desiree Williams;1993-03-19;Z32250364;XLE;87;Tripulante de Cabina
 4;Diane Swanson;1974-02-14;F08731569;KAI;138;Tripulante de Cabina
@@ -1629,7 +1620,6 @@
 4;Diane Swanson;1974-02-14;F08731569;LAW;138;Tripulante de Cabina
 51;Kristina Gilmore;1985-12-13;B29047250;NCY;53;Tripulante de Cabina
 2;Melissa Jimenez;1998-12-18;W08204144;LAW;104;Tripulante de Cabina
-3;Linda Paul;1983-01-12;L91489362;;;
 22;Rodney Wilson;1973-10-18;R08362516;KAI;38;Tripulante de Cabina
 49;Kenneth Brady;1981-11-06;O21522167;UAN;102;Paramedico
 2;Melissa Jimenez;1998-12-18;W08204144;BTA;26;Tripulante de Cabina
