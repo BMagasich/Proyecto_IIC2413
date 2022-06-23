@@ -21,12 +21,10 @@ session_start();
 $msg = $_GET['msg']
 ?>
 
-<?php include('../templates/header.html'); ?>
 
 <body>
 	<h3> Ingrese nombre de usuario y contraseña </h3>
-	<br>
-    <form class="form-signin" role="form" action="login_validation.php" method="post">
+	<br>  
         <?php echo $msg; ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
@@ -45,7 +43,7 @@ $msg = $_GET['msg']
                 <h2 class="title text-center">Inicio de sesión</h2>
                 <div class="row justify-content-center">
                     <div class="col-sm-offset-1 col-sm-6">
-                    <form>
+                    <form class="form-signin" role="form" action="login_validation.php" method="post">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                         <input type="username" id="username" class="form-control" placeholder="Username" />
@@ -84,5 +82,4 @@ $msg = $_GET['msg']
                 <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Grupo 92 & XX - 2022 - 1</p></div>
             </footer>
         </section>
-    </form>
 </body>
