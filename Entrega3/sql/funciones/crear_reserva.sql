@@ -35,7 +35,7 @@ BEGIN
     SELECT * INTO vuelo_r FROM vuelo WHERE vuelo_id = id LIMIT 1;
     SELECT MAX(numero) INTO n_ticket FROM ticket;
     SELECT MAX(reserva_id) INTO r_id FROM reserva;
-    r_id := r_id + 1
+    r_id := r_id + 1;
     contador := 0;
     contador1 := 0;
     tope1 := 0;
