@@ -65,9 +65,9 @@ BEGIN
                 END LOOP;
 
                 IF tope1 = 0 THEN
-                    n_ticket := n_ticket + 1
+                    n_ticket := n_ticket + 1;
+                    INSERT INTO ticket values(n_ticket, pasaporte1, vuelo_r.vuelo_id, 1, 'Economica', 'FALSO');
                     INSERT INTO reserva values(r_id, r_id, n_ticket, pasaporte_comprador);
-                    INSERT INTO ticket values(n_ticket, pasaporte1, vuelo_r.vuelo_id, 1, 'Economica', 'Falso');
                 END IF;
 
 
@@ -91,9 +91,9 @@ BEGIN
                 END LOOP;
 
                 IF tope2 = 0 THEN
-                    n_ticket := n_ticket + 1
+                    n_ticket := n_ticket + 1;
+                    INSERT INTO ticket values(n_ticket, pasaporte2, vuelo_r.vuelo_id, 2, 'Economica', 'FALSO');
                     INSERT INTO reserva values(r_id, r_id, n_ticket, pasaporte_comprador);
-                    INSERT INTO ticket values(n_ticket, pasaporte2, vuelo_r.vuelo_id, 2, 'Economica', 'Falso');
                 END IF;
             END IF;
         END IF;
@@ -115,20 +115,14 @@ BEGIN
                 END LOOP;
 
                 IF tope3 = 0 THEN
-                    n_ticket := n_ticket + 1
+                    n_ticket := n_ticket + 1;
+                    INSERT INTO ticket values(n_ticket, pasaporte3, vuelo_r.vuelo_id, 3, 'Economica', 'FALSO');
                     INSERT INTO reserva values(r_id, r_id, n_ticket, pasaporte_comprador);
-                    INSERT INTO ticket values(n_ticket, pasaporte3, vuelo_r.vuelo_id, 3, 'Economica', 'Falso');
                 END IF;
             END IF;
         END IF;
     END LOOP;
-    IF contador1 = 0 THEN
-        RAISE EXCEPTION 'No se puede realizar una reserva con pasaporte invalido';
-    END IF;
-    IF contador2 = 0 THEN
-        RAISE EXCEPTION 'No se puede realizar una reserva con pasaporte invalido';
-    END IF;
-    IF contador3 = 0 THEN
+    IF contador1 = 0 AND contador2 = 0 AND contador3 = 0 THEN
         RAISE EXCEPTION 'No se puede realizar una reserva con pasaporte invalido';
     END IF;
     IF contador = 0 THEN
