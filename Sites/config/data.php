@@ -1,6 +1,11 @@
 <?php
     // Variables para hacer iniciar sesión
-    $user = 'grupo25';
-    $password = 'grupo25';
-    $db_name = 'grupo25e2';
+    $user1 = 'grupo25';
+    $password1 = 'grupo25';
+    $db_name1 = 'grupo25e3';
+
+    $user2 = 'grupo92';
+    $password2 = 'grupo92';
+    $db_name2 = 'grupo92e3';
+
 ?>
