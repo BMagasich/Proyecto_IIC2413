@@ -43,7 +43,7 @@ $msg = $_GET['msg']
                 <h2 class="title text-center">Inicio de sesión</h2>
                 <div class="row justify-content-center">
                     <div class="col-sm-offset-1 col-sm-6">
-                    <form class="form-signin" role="form" action="login_validation.php" method="post">
+                    <form class="form-signin" role="form" action="./../index.php" method="post">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                         <input type="username" id="username" class="form-control" placeholder="Username" />
@@ -52,22 +52,6 @@ $msg = $_GET['msg']
                         <!-- Password input -->
                         <div class="form-outline mb-4">
                         <input type="password" id="password" class="form-control" placeholder="Password" />
-                        </div>
-                    
-                        <!-- 2 column grid layout for inline styling -->
-                        <div class="row mb-4">
-                        <div class="col d-flex justify-content-center">
-                            <!-- Checkbox -->
-                            <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                            <label class="form-check-label" for="form2Example31"> Remember me </label>
-                            </div>
-                        </div>
-                    
-                        <div class="col">
-                            <!-- Simple link -->
-                            <a href="#!">Forgot password?</a>
-                        </div>
                         </div>
                     
                         <!-- Submit button -->
@@ -79,7 +63,7 @@ $msg = $_GET['msg']
                 </div>
             </div><br><br>
             <footer class="py-5 bg-dark">
-                <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Grupo 92 & XX - 2022 - 1</p></div>
+                <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Grupo 25 & 92- 2022 - 1</p></div>
             </footer>
         </section>
 </body>
