@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Entrega 2 G92</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="/home/grupo92/Sites/assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-
-        <link href="../css/styles.css" rel="stylesheet" />
-    </head>
+<?php include('../templates/header.html'); ?>
 
 
     <body>
@@ -116,18 +100,4 @@
         </div>
     </div>
     
-<!-- Footer-->
-<footer class="py-5 bg-dark">
-    <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Grupo 92 & XX - 2022 - 1</p></div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="./Sites/js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-</body>
-</html>
+<?php include('../templates/footer.html'); ?>
