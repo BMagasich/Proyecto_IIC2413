@@ -1,7 +1,7 @@
 # Proyecto_IIC2413
 
 ENTREGA 3:
-Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del pasaporte y 2 str aleatorios 
+Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del pasaporte y 2 str aleatorios// 
 	Nombre: nombre
 	Pasaporte: pasaporte
 	aleatorios: 3G
