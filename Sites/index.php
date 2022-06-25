@@ -17,7 +17,6 @@ include('templates/header.html'); ?>
 
 <body>
 	<br>  
-        <?php echo $msg; ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <a class="navbar-brand"> Login </a>
@@ -55,4 +54,4 @@ include('templates/header.html'); ?>
                 </div>
             </div><br><br>
         </section>
-        <?php include('../templates/footer.html'); }?>
+        <?php include('templates/footer.html'); }?>
