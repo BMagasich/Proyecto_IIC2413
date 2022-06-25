@@ -15,4 +15,4 @@ Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del 
  Para poder realizar la corrección exiten incialmente los siguientes 3 usuarios de prueba:
  USUARIO: pasajero_prueba, CONTRASEÑA: pasajero123
  USUARIO: compañia_prueba, CONTRASEÑA: compañia123
- USUARIO: admin_prueba, CONTRASEÑA: admin123
+ USUARIO: DGAC, CONTRASEÑA: admin
