@@ -5,7 +5,7 @@
         require("../config/conection.php");
 
         $query = "SELECT * FROM crear_usuarios();";
-        $result = $db -> prepare($query);
+        $result = $db1 -> prepare($query);
         $result -> execute();
 
         $data = $result -> fetchAll();
