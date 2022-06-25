@@ -1,5 +1,5 @@
 <?php
-require_once '/template/__init__.php';
+require_once 'views/__init__.php';
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 
 if ($request_method == 'POST') {
@@ -16,7 +16,6 @@ if ($request_method == 'POST') {
 include('templates/header.html'); ?>
 
 <body>
-	<h3> Ingrese nombre de usuario y contraseña </h3>
 	<br>  
         <?php echo $msg; ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
