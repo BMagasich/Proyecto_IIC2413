@@ -18,6 +18,12 @@ if ($request_method == 'POST') {
     <td>$data</td>
     </tr>";
 
+    if (empty($data)) {
+        echo "<tr>
+        <td>Tabla Vacía</td>
+        </tr>";
+    }
+
     $_SESSION['user_id'] = $user;
     $_SESSION['user_name'] = $password;
 
