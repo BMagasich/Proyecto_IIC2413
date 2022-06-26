@@ -16,6 +16,8 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
+    echo "<script>console.log($data);</script>";
+
     if (!empty($data[0])) { 
         go_inicio();
     } else {
