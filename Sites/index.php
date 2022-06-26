@@ -14,10 +14,10 @@ if ($request_method == 'POST') {
     $data = $result -> fetchAll();
 
     foreach ($data as $d) {
-    $_SESSION['user_id'] = $d[1];}
+    $_SESSION['user_id'] = $d;}
     $_SESSION['user_name'] = $password;
 
-    if (!empty($data[0][0])) { 
+    if (!empty($data)) { 
         go_inicio();
     } else {
         go_home();}
