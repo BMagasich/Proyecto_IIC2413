@@ -7,9 +7,6 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
-    console.log($user);
-    console.log($password);
-
     $_SESSION['user_id'] = $user;
     $_SESSION['user_name'] = $password;
 
@@ -50,12 +47,12 @@ include('templates/header.html'); ?>
                     <form class="form-signin" role="form" method="post">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                        <input type="username" id="username" class="form-control" placeholder="Username" />
+                        <input type="username" id="username" class="form-control" placeholder="Username" name="username" />
                         </div>
                     
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                        <input type="password" id="password" class="form-control" placeholder="Password" />
+                        <input type="password" id="password" class="form-control" placeholder="Password" name="password" />
                         </div>
                     
                         <!-- Submit button -->
