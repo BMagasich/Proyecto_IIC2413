@@ -18,7 +18,7 @@ if ($request_method == 'POST') {
 
     include('templates/header.html');
 
-    if (!empty($data[0])) { 
+    if (!empty($data)) { 
         go_inicio();
     } else {
         go_home();}
