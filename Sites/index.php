@@ -7,16 +7,11 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
-    $_SESSION['user_id'] = $user;
-    $_SESSION['user_name'] = $password;
-
     $query = "SELECT * FROM validacion_usuarios($user, $password);";
     $result = $db1 -> prepare($query);
     $result -> execute();
 
     $data = $result -> fetchAll();
-
-    include('templates/header.html');
 
     if (!empty($data)) { 
         go_inicio();
