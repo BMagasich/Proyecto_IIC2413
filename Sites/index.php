@@ -13,7 +13,7 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    if (!empty($data)) { 
+    if (!empty($user)) { 
         go_inicio();
     } else {
         go_home();}
