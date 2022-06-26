@@ -16,7 +16,7 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    if (empty($data)) { 
+    if (!empty($data)) { 
         go_inicio();
     } else {
         go_home();}
@@ -43,7 +43,7 @@ include('templates/header.html'); ?>
                 <h2 class="title text-center">Inicio de sesión</h2>
                 <div class="row justify-content-center">
                     <div class="col-sm-offset-1 col-sm-6">
-                    <form class="form-signin" role="form"  method="post">
+                    <form class="form-signin" role="form" method="post">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                         <input type="username" id="username" class="form-control" placeholder="Username" />
