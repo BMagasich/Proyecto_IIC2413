@@ -16,7 +16,8 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    $_SESSION['user_id'] = $data['tipo_r'];
+    foreach ($data as $d) {
+    $_SESSION['user_id'] = $d;}
     $_SESSION['user_name'] = $password;
 
     if (!empty($data[0][0])) { 
