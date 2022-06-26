@@ -7,8 +7,8 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
-    echo "<p>$user</p>";
-    echo "<p>$password</p>";
+    console.log($user);
+    console.log($password);
 
     $_SESSION['user_id'] = $user;
     $_SESSION['user_name'] = $password;
@@ -18,8 +18,6 @@ if ($request_method == 'POST') {
     $result -> execute();
 
     $data = $result -> fetchAll();
-
-    echo "<p>$data</p>";
 
     if (!empty($data[0])) { 
         go_inicio();
