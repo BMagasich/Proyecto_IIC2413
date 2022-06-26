@@ -7,9 +7,6 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
-    $_SESSION['user_id'] = $user;
-    $_SESSION['user_name'] = $password;
-
     $query = "SELECT * FROM validacion_usuarios($user, $password);";
     $result = $db1 -> prepare($query);
     $result -> execute();
@@ -17,7 +14,7 @@ if ($request_method == 'POST') {
     $data = $result -> fetchAll();
 
     foreach ($data as $d) {
-    $_SESSION['user_id'] = $d;}
+    $_SESSION['user_id'] = $d[1];}
     $_SESSION['user_name'] = $password;
 
     if (!empty($data[0][0])) { 
