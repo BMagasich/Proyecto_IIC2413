@@ -16,5 +16,15 @@ function go_inicio() {
     exit();
 };
 
+function go_admin() {
+    header("Location: https://codd.ing.puc.cl/~grupo25/views/admin_nav.php");
+    exit();
+};
+
+function go_comp() {
+    header("Location: https://codd.ing.puc.cl/~grupo25/views/comp_nav.php");
+    exit();
+};
+
 
 ?>

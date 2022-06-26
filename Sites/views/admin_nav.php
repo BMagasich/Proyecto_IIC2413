@@ -1,4 +1,26 @@
-<?php include('../templates/header.html'); ?>
+<?php 
+require 'views/__init__.php';
+$request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
+
+if ($request_method == 'POST') {
+
+    $code = $_POST["codigo"];
+
+    if (isset($_POST["aceptado"])) {
+        $respuesta = "aceptado";
+
+        $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
+        $result = $db1 -> prepare($query);
+        $result -> execute();} 
+        else {
+            $respuesta = "rechazado";
+            $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
+            $result = $db1 -> prepare($query);
+            $result -> execute();
+    }
+    go_admin();
+} elseif ($request_method == 'GET') {
+include('../templates/header.html'); ?>
 
 
     <body>
@@ -16,14 +38,26 @@
             </div>
         </nav>
 
+<?php
+require("../config/conection.php");
 
-    <div class="container">
+// $query = "SELECT *
+$query = "SELECT *
+        FROM vuelos
+        WHERE lower(estado) = 'pendiente';"; // Crear la consulta
+$result = $db2 -> prepare($query);
+$result -> execute();
+
+$data = $result -> fetchAll();
+?>
+
+        <div class="container">
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
                 <div class="panel">
                     <div class="panel-heading" align="center">
                             <div class="col col-sm-3 col-xs-12">
-                                <h4 class="title"> Puedes elegir una Propuesta de Vuelo </h4>
+                                <h4 class="title">Propuestas Pendientes</h4>
                             </div>
                     </div>
                     <div class="panel-body table-responsive">
@@ -31,33 +65,39 @@
                             <thead>
                                 <!-- Aqui van el nombre de cada atributo de la tabla -->
                                 <tr>
-                                    <th>Vuelo</th>
-                                    <th>Propuesta</th>
-                                    <th>Elige</th>
+                                    <th>id</th>
+                                    <th>codigo</th>
+                                    <th>compañía</th>
+                                    <th>fecha_salida</th>
+                                    <th>fecha_llegada</th>
+                                    <th>aeronave</th>
+                                    <th>aerodromo_salida</th>
+                                    <th>aerodromo_llegada</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <!-- Primer valor de la tabla -->
-                                <tr>
-                                    <td>Propuestas Pendientes</td>
-                                    <td>Muestra todas las propuestas de vuelo pendientes de ser aprobadas por la DGAC</td>
-                                    <td><form method="get" action="consultas/consulta1.php"> <button type="submit" class="btn btn-secondary">IR</button></form></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Propuestas Aceptadas</td>
-                                    <td>Dados un código ICAO de un aeródromo de origen y de destino, muestra propuestas de vuelo aceptadas que viajan entre ellos</td>
-                                    <td><form method="post" action="consultas/consulta2.php">
-                                        <div class="input-group mb-3">
-                                        <input type="text" name="input_icao1" class="form-control" placeholder="Código ICAO" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <input type="text" name="input_icao2" class="form-control" placeholder="Código ICAO" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button type="submit" class="btn btn-secondary">IR</button>
-                                        </div>
-                                        </div></form>
-                                    </td>
-                                </tr>
-
+                            <?php
+                                foreach ($data as $d) { ?>
+                                <form method="post">
+                                    <?php echo "<tr>
+                                            <td>$d[0]</td>" ?>
+                                            <td name= "codigo"><?php echo "$d[1]" ?></td>
+                                            <?php echo"
+                                            <td>$d[2]</td>
+                                            <td>$d[3]</td>
+                                            <td>$d[4]</td>
+                                            <td>$d[5]</td>
+                                            <td>$d[6]</td>
+                                            <td>$d[7]</td>" ?>
+                                            <td>
+                                            <button type="submit" name="aceptado" class="btn btn-secondary">ACEPTAR</button>
+                                            <button type="submit" name="rechazado" class="btn btn-secondary">RECHAZAR</button></form>
+                                            </td>
+                                            <?php echo"
+                                        </tr>
+                                        </form>";
+                                    }?>
                             </tbody>
                         </table>
                     </div>
@@ -70,5 +110,7 @@
             </div>
         </div>
     </div>
+    <!--  -->
+    
 
-    <?php include('../templates/footer.html'); ?>
+    <?php include('../templates/footer.html'); }?>
