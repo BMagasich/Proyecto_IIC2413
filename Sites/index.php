@@ -40,9 +40,7 @@ include('templates/header.html'); ?>
         </nav>
         <section class="section">
             <div class="container"><br><br>
-            <?php if (isset($_SESSION['user_id'])) { ?>
-                <h2 class="title text-center">Inicio de sesión <?php echo $_SESSION['user_id']?> </h2> <?php } else {?>
-                <h2 class="title text-center">Inicio de sesión</h2> <?php } ?>
+                <h2 class="title text-center">Inicio de sesión</h2> 
                 <div class="row justify-content-center">
                     <div class="col-sm-offset-1 col-sm-6">
                     <form class="form-signin" role="form" method="post">
