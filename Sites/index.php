@@ -4,11 +4,22 @@ $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 
 if ($request_method == 'POST') {
 
-    $user_id = 1;
-    $user_name = admin;
+    $user = $_POST["username"];
+    $password = $_POST["password"];
 
-    $_SESSION['user_id'] = $user_id;
-    $_SESSION['user_name'] = $user_name;
+    $query = "SELECT *
+              FROM usuarios
+              WHERE username = '%$user%', contraseña = '%$password%';";
+    $result = $db -> prepare($query);
+    $result -> execute();
+
+    $data = $result -> fetchAll();
+    echo "<tr>
+    <td>$data</td>
+    </tr>";
+
+    $_SESSION['user_id'] = $user;
+    $_SESSION['user_name'] = $password;
 
     go_home();
 } elseif ($request_method == 'GET') {
@@ -23,7 +34,7 @@ include('templates/header.html'); ?>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../queries/import_users.php">Importar usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="queries/import_users.php">Importar usuarios</a></li>
                         
                     </ul>
                 </div>
