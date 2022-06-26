@@ -16,7 +16,7 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    print($data);
+    echo "<script>console.log('Console: " . $data . "' );</script>";
 
 } elseif ($request_method == 'GET') {
 
