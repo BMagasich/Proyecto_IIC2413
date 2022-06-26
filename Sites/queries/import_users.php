@@ -9,6 +9,6 @@
 
     $data = $result -> fetchAll();
 
-    require_once '/../views/__init__.php';
+    require_once '../views/__init__.php';
     go_home();
 ?>
