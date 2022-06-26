@@ -1,14 +1,14 @@
 <?php
-        require("../config/conection.php");
+    require("../config/conection.php");
 
-        $query = "DELETE FROM usuarios;";
+    $query = "DELETE FROM usuarios;";
 
-        $query = "SELECT * FROM crear_usuarios();";
-        $result = $db1 -> prepare($query);
-        $result -> execute();
+    $query = "SELECT * FROM crear_usuarios();";
+    $result = $db1 -> prepare($query);
+    $result -> execute();
 
-        $data = $result -> fetchAll();
+    $data = $result -> fetchAll();
 
-        require_once '__init__.php';
-        go_home();
-    ?>
+    require_once '/../views/__init__.php';
+    go_home();
+?>
