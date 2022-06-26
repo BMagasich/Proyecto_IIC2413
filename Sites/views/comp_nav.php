@@ -36,6 +36,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            
+                            <?php
+                            require("../config/conection.php");
+
+                            // $query = "SELECT *
+                            $query = "SELECT *
+                                    FROM vuelos
+                                    WHERE lower(estado) = 'pendiente';"; // Crear la consulta
+                            $result = $db2 -> prepare($query);
+                            $result -> execute();
+
+                            $data = $result -> fetchAll();
+                            ?>
                                 <!-- Primer valor de la tabla -->
                                 <tr>
                                     <td>Vuelo 1</td>
