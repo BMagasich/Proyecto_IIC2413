@@ -19,10 +19,11 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    if (!empty($data[0])) { 
+    foreach ($data as $d) {
+        if (!empty($d)) { 
         go_inicio();
     } else {
-        go_home();}
+        go_home();}}
 } elseif ($request_method == 'GET') {
 
 include('templates/header.html'); ?>
