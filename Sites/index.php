@@ -15,8 +15,8 @@ if ($request_method == 'POST') {
     $data = $result -> fetchAll();
 
     if (!empty($data)) { 
-        $_SESSION[username]=$username
-        
+        $_SESSION[username]=$username;
+
         $query = "SELECT * FROM usuarios 
         WHERE username='$user' AND contraseña='$password' AND tipo='Admin DGAC';";
         $result = $db1 -> prepare($query);
