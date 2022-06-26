@@ -16,11 +16,12 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    foreach ($data as $d) {
-        if (!empty($d)) { 
+    include('templates/header.html');
+
+    if (!empty($data[0])) { 
         go_inicio();
     } else {
-        go_home();}}
+        go_home();}
 } elseif ($request_method == 'GET') {
 
 include('templates/header.html'); ?>
