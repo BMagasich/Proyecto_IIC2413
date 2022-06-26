@@ -23,6 +23,10 @@ BEGIN
     id := 1;
     INSERT INTO usuarios values(id, 'DGAC', 'admin', 'Admin DGAC');
     id := id + 1;
+    INSERT INTO usuarios values(id, 'pasajero_prueba', 'pasajero123', 'Pasajero');
+    id := id + 1;
+    INSERT INTO usuarios values(id, 'compañia_prueba', 'compañia123', 'Compañia Aerea');
+    id := id + 1;
 
     FOR tupla1 IN (SELECT * FROM dblink('dbname=grupo25e3 user=grupo25 password=grupo25 port=5432','SELECT codigo FROM compania') AS f(codigo varchar))
 
