@@ -9,7 +9,12 @@ session_start();
 function go_home() {
     header("Location: " . '/~grupo25/');
     exit();
-}
+};
+
+function go_inicio() {
+    header("Location: https://codd.ing.puc.cl/~grupo25/views/inicio.php");
+    exit();
+};
 
 
 ?>

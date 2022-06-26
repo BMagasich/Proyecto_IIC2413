@@ -7,24 +7,18 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
-    $query = "SELECT *
-              FROM usuarios
-              WHERE username = '%$user%', contraseña = '%$password%';";
-    $result = $db -> prepare($query);
+    $_SESSION['user_id'] = $user;
+    $_SESSION['user_name'] = $password;
+
+    $query = "SELECT * FROM validacion_usuarios($user, $password);";
+    $result = $db1 -> prepare($query);
     $result -> execute();
 
     $data = $result -> fetchAll();
 
-    if ($data == '') {
-        echo "<tr>
-        <td>Tabla Vacía</td>
-        </tr>";
-    }
+    if (!empty(data)) {go_inicio()} else {
 
-    $_SESSION['user_id'] = $user;
-    $_SESSION['user_name'] = $password;
-
-    go_home();
+    go_home();}
 } elseif ($request_method == 'GET') {
 
 include('templates/header.html'); ?>

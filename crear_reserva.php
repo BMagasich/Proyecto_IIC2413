@@ -1,9 +1,7 @@
 <?php
     require("../config/conection.php");
 
-    $query = "DELETE FROM usuarios;";
-
-    $query = "SELECT * FROM crear_usuarios();";
+    $query = "SELECT * FROM validacion_usuarios();";
     $result = $db1 -> prepare($query);
     $result -> execute();
 
