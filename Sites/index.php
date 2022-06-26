@@ -16,7 +16,7 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    print($data)
+    print($data);
 
 } elseif ($request_method == 'GET') {
 
