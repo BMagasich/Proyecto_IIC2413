@@ -13,8 +13,7 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    foreach ($data as $d) {
-    $_SESSION['user_id'] = $d;}
+    $_SESSION['user_id'] = $data;
     $_SESSION['user_name'] = $password;
 
     if (!empty($data)) { 
