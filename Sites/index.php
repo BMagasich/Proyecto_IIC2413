@@ -7,7 +7,7 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
-    $query = "SELECT * FROM validacion_usuarios($user, $password);";
+    $query = "SELECT validacion_usuarios($user, $password);";
     $result = $db1 -> prepare($query);
     $result -> execute();
 
