@@ -4,7 +4,7 @@
 ?>
 
 <body>
-    <h1 align = 'center'> Plataforma de gestión comercial de vuelos <?php $_SESSION['user_id']?> </h1>
+    <h1 align = 'center'> Plataforma de gestión comercial de vuelos <?php echo $_SESSION['user_id']?> </h1>
     <h2 style='text-align:center'>Aquí encontrarás información sobre vuelos, 
         aeropuertos, aerolineas, reservas y más. </h2>
 
