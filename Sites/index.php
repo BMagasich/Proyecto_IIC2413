@@ -1,5 +1,5 @@
 <?php
-require_once 'views/__init__.php';
+require 'views/__init__.php';
 $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 
 if ($request_method == 'POST') {
@@ -43,7 +43,7 @@ include('templates/header.html'); ?>
                 <h2 class="title text-center">Inicio de sesión</h2>
                 <div class="row justify-content-center">
                     <div class="col-sm-offset-1 col-sm-6">
-                    <form class="form-signin" role="form" action="views/inicio.php" method="post">
+                    <form class="form-signin" role="form"  method="post">
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                         <input type="username" id="username" class="form-control" placeholder="Username" />
@@ -63,4 +63,4 @@ include('templates/header.html'); ?>
                 </div>
             </div><br><br>
         </section>
-        <?php include('templates/footer.html'); }?>
+<?php include('templates/footer.html'); }?>
