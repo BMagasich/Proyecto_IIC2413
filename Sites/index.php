@@ -7,17 +7,47 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
-    $query = "SELECT validacion_usuarios($user, $password);";
+    $query = "SELECT * FROM usuarios 
+    WHERE username='$user' AND contraseña='$password';";
     $result = $db1 -> prepare($query);
     $result -> execute();
 
     $data = $result -> fetchAll();
 
-    $_SESSION['user_id'] = $data;
-    $_SESSION['user_name'] = $password;
+    if (!empty($data)) { 
+        $_SESSION[username]=$username
+        
+        $query = "SELECT * FROM usuarios 
+        WHERE username='$user' AND contraseña='$password' AND tipo='Admin DGAC';";
+        $result = $db1 -> prepare($query);
+        $result -> execute();
+    
+        $data2 = $result -> fetchAll();
+        if (!empty($data2)) {
+            go_admin();
+        }
 
-    if (!empty($result)) { 
-        go_inicio();
+        $query = "SELECT * FROM usuarios 
+        WHERE username='$user' AND contraseña='$password' AND tipo='Compañia Aerea';";
+        $result = $db1 -> prepare($query);
+        $result -> execute();
+    
+        $data2 = $result -> fetchAll();
+        if (!empty($data2)) {
+            go_comp();
+        }
+
+        $query = "SELECT * FROM usuarios 
+        WHERE username='$user' AND contraseña='$password' AND tipo='Pasajero';";
+        $result = $db1 -> prepare($query);
+        $result -> execute();
+    
+        $data2 = $result -> fetchAll();
+        if (!empty($data2)) {
+            go_inicio();
+        }
+
+        
     } else {
         go_home();}
 } elseif ($request_method == 'GET') {

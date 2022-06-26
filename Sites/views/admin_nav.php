@@ -81,7 +81,7 @@ $data = $result -> fetchAll();
                                 <form method="post">
                                     <?php echo "<tr>
                                             <td>$d[0]</td>" ?>
-                                            <td name= "codigo"><?php echo "$d[1]" ?></td>
+                                            <td><?php echo "$d[1]" ?></td>
                                             <?php echo"
                                             <td>$d[2]</td>
                                             <td>$d[3]</td>

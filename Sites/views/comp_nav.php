@@ -16,14 +16,26 @@
             </div>
         </nav>
 
+<?php
+require("../config/conection.php");
 
-    <div class="container">
+// $query = "SELECT *
+$query = "SELECT *
+        FROM vuelo
+        WHERE lower(estado) = 'aceptado';"; // Crear la consulta
+$result = $db1 -> prepare($query);
+$result -> execute();
+
+$data = $result -> fetchAll();
+?>
+
+        <div class="container">
         <div class="row">
-            <div class="col-md-offset-1 col-md-6">
+            <div class="col-md-offset-1 col-md-10">
                 <div class="panel">
                     <div class="panel-heading" align="center">
                             <div class="col col-sm-3 col-xs-12">
-                                <h4 class="title"> Vuelos Aprobados </h4>
+                                <h4 class="title">Vuelos aceptados</h4>
                             </div>
                     </div>
                     <div class="panel-body table-responsive">
@@ -31,52 +43,67 @@
                             <thead>
                                 <!-- Aqui van el nombre de cada atributo de la tabla -->
                                 <tr>
-                                    <th>Vuelo</th>
-                                    <th>Elige</th>
+                                    <th>id</th>
+                                    <th>codigo</th>
+                                    <th>compañía</th>
+                                    <th>fecha_salida</th>
+                                    <th>fecha_llegada</th>
+                                    <th>aeronave</th>
+                                    <th>aerodromo_salida</th>
+                                    <th>aerodromo_llegada</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                            
                             <?php
-                            require("../config/conection.php");
-
-                            // $query = "SELECT *
-                            $query = "SELECT *
-                                    FROM vuelos
-                                    WHERE lower(estado) = 'pendiente';"; // Crear la consulta
-                            $result = $db2 -> prepare($query);
-                            $result -> execute();
-
-                            $data = $result -> fetchAll();
-                            ?>
-                                <!-- Primer valor de la tabla -->
-                                <tr>
-                                    <td>Vuelo 1</td>
-                                    <td><form method="get" action="consultas/consulta1.php"> <button type="submit" class="btn btn-secondary">VER</button></form></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Vuelo 2</td>
-                                    <td><form method="get" action="consultas/consulta1.php"> <button type="submit" class="btn btn-secondary">VER</button></form></td>
-                                </tr>
-
+                                foreach ($data as $d) { ?>
+                                <form method="post">
+                                    <?php echo "<tr>
+                                            <td>$d[0]</td>" ?>
+                                            <td name= "codigo"><?php echo "$d[4]" ?></td>
+                                            <?php echo"
+                                            <td>$d[12]</td>
+                                            <td>$d[6]</td>
+                                            <td>$d[7]</td>
+                                            <td>$d[5]</td>
+                                            <td>$d[1]</td>
+                                            <td>$d[2]</td>" ?>
+                                            <td>
+                                            </form>
+                                            </td>
+                                            <?php echo"
+                                        </tr>
+                                        </form>";
+                                    }?>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="row">
-                            <div class="col col-sm-6 col-xs-6"></div>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    
+<?php
 
+require("../config/conection.php");
 
-            <div class="col-md-offset-1 col-md-6">
+// $query = "SELECT *
+$query = "SELECT *
+        FROM vuelo
+        WHERE lower(estado) = 'rechazado';"; // Crear la consulta
+$result = $db1 -> prepare($query);
+$result -> execute();
+
+$data = $result -> fetchAll();
+?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
                 <div class="panel">
                     <div class="panel-heading" align="center">
                             <div class="col col-sm-3 col-xs-12">
-                                <h4 class="title"> Vuelos Rechazados </h4>
+                                <h4 class="title">Vuelos rechazados</h4>
                             </div>
                     </div>
                     <div class="panel-body table-responsive">
@@ -84,25 +111,42 @@
                             <thead>
                                 <!-- Aqui van el nombre de cada atributo de la tabla -->
                                 <tr>
-                                    <th>Vuelo</th>
-                                    <th>Elige</th>
+                                    <th>id</th>
+                                    <th>codigo</th>
+                                    <th>compañía</th>
+                                    <th>fecha_salida</th>
+                                    <th>fecha_llegada</th>
+                                    <th>aeronave</th>
+                                    <th>aerodromo_salida</th>
+                                    <th>aerodromo_llegada</th>
                                 </tr>
                             </thead>
+
                             <tbody>
-                                <!-- Primer valor de la tabla -->
-                                <tr>
-                                    <td>Vuelo 1</td>
-                                    <td><form method="get" action="consultas/consulta1.php"> <button type="submit" class="btn btn-secondary">VER</button></form></td>
-                                </tr>
-
-                                <tr>
-                                    <td>Vuelo 2</td>
-                                    <td><form method="get" action="consultas/consulta1.php"> <button type="submit" class="btn btn-secondary">VER</button></form></td>
-                                </tr>
-
+                            <?php
+                                foreach ($data as $d) { ?>
+                                <form method="post">
+                                    <?php echo "<tr>
+                                            <td>$d[0]</td>" ?>
+                                            <td name= "codigo"><?php echo "$d[4]" ?></td>
+                                            <?php echo"
+                                            <td>$d[12]</td>
+                                            <td>$d[6]</td>
+                                            <td>$d[7]</td>
+                                            <td>$d[5]</td>
+                                            <td>$d[1]</td>
+                                            <td>$d[2]</td>" ?>
+                                            <td>
+                                            </form>
+                                            </td>
+                                            <?php echo"
+                                        </tr>
+                                        </form>";
+                                    }?>
                             </tbody>
                         </table>
                     </div>
+
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col col-sm-6 col-xs-6"></div>
