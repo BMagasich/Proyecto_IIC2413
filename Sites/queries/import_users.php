@@ -1,6 +1,3 @@
-<?php include('../templates/header.html'); ?>
-
-<body>
 <?php
         require("../config/conection.php");
 
@@ -15,5 +12,3 @@
         require_once '__init__.php';
         go_home();
     ?>
-
-<?php include('../templates/footer.html'); ?>
