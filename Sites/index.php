@@ -17,7 +17,7 @@ if ($request_method == 'POST') {
     $data = $result -> fetchAll();
 
     if (empty($data)) { 
-        go_home();
+        go_inicio();
     } else {
         go_home();}
 } elseif ($request_method == 'GET') {
