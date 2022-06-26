@@ -14,11 +14,8 @@ if ($request_method == 'POST') {
     $result -> execute();
 
     $data = $result -> fetchAll();
-    echo "<tr>
-    <td>$data</td>
-    </tr>";
 
-    if (empty($data)) {
+    if ($data == '') {
         echo "<tr>
         <td>Tabla Vacía</td>
         </tr>";

@@ -7,7 +7,7 @@ require_once __DIR__ . "/../config/conection.php";
 session_start();
 
 function go_home() {
-    header("Location: /../index.php");
+    header("Location: " . '/~grupo25/');
     exit();
 }
 
