@@ -7,13 +7,16 @@ if ($request_method == 'POST') {
     $user = $_POST["username"];
     $password = $_POST["password"];
 
+    $_SESSION['user_id'] = $user;
+    $_SESSION['user_name'] = $password;
+
     $query = "SELECT * FROM validacion_usuarios($user, $password);";
     $result = $db1 -> prepare($query);
     $result -> execute();
 
     $data = $result -> fetchAll();
 
-    if (!empty($user)) { 
+    if (!empty($data)) { 
         go_inicio();
     } else {
         go_home();}
@@ -37,7 +40,8 @@ include('templates/header.html'); ?>
         </nav>
         <section class="section">
             <div class="container"><br><br>
-                <h2 class="title text-center">Inicio de sesión</h2>
+            <?php if (isset($_SESSION['user_id'])) { ?>
+                <h2 class="title text-center">Inicio de sesión <?php echo $_SESSION['user_id']?></h2>
                 <div class="row justify-content-center">
                     <div class="col-sm-offset-1 col-sm-6">
                     <form class="form-signin" role="form" method="post">
