@@ -16,8 +16,10 @@ if ($request_method == 'POST') {
 
     $data = $result -> fetchAll();
 
-    echo "<script>console.log('Console: " . $data . "' );</script>";
-
+    if (empty($data)) { 
+        go_home();
+    } else {
+        go_home();}
 } elseif ($request_method == 'GET') {
 
 include('templates/header.html'); ?>
