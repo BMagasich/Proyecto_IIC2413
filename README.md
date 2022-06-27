@@ -19,3 +19,7 @@ ENTREGA 3:
  	USUARIO: pasajero_prueba, CONTRASEÑA: pasajero123
  	USUARIO: compañia_prueba, CONTRASEÑA: compañia123
  	USUARIO: DGAC, CONTRASEÑA: admin
+
+Cabe mencionar que para el atributo 'valor' de la tabla vuelos correspondiente a aquellos vuelos que se aprueban, se cacluló de la siguiente manera:
+
+	valor = peso*1000
