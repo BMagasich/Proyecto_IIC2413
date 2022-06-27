@@ -1,8 +1,9 @@
 # Proyecto_IIC2413
 
 ENTREGA 3:
-Contraseña compañias: 8 caracteres totalmente aleatorios.
-Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del pasaporte y 2 str aleatorios
+
+	Contraseña compañias: 8 caracteres totalmente aleatorios.
+	Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del pasaporte y 2 str aleatorios
 
 	Nombre: nombre
 	Pasaporte: pasaporte
@@ -15,8 +16,6 @@ Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del 
  
  Para poder realizar la corrección exiten incialmente los siguientes 3 usuarios de prueba:
  
- USUARIO: pasajero_prueba, CONTRASEÑA: pasajero123
- 
- USUARIO: compañia_prueba, CONTRASEÑA: compañia123
- 
- USUARIO: DGAC, CONTRASEÑA: admin
+ 	USUARIO: pasajero_prueba, CONTRASEÑA: pasajero123
+ 	USUARIO: compañia_prueba, CONTRASEÑA: compañia123
+ 	USUARIO: DGAC, CONTRASEÑA: admin
