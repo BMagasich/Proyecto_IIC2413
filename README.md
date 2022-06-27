@@ -1,8 +1,10 @@
 # Proyecto_IIC2413
 
 ENTREGA 3:
-Contraseña compañias: 8 caracteres totalmente aleatorios.
-Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del pasaporte y 2 str aleatorios
+
+	Contraseña compañias: 8 caracteres totalmente aleatorios.
+	Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del pasaporte y 2 str aleatorios
+
 	Nombre: nombre
 	Pasaporte: pasaporte
 	aleatorios: 3G
@@ -13,6 +15,11 @@ Contraseña de pasajero: primeras tres letras del nombre, las tres últimos del 
  Cabe mencionar que par importar las bases de daros correspondientes se utilizó dblink en dichos archivos.
  
  Para poder realizar la corrección exiten incialmente los siguientes 3 usuarios de prueba:
- USUARIO: pasajero_prueba, CONTRASEÑA: pasajero123
- USUARIO: compañia_prueba, CONTRASEÑA: compañia123
- USUARIO: DGAC, CONTRASEÑA: admin
+ 
+ 	USUARIO: pasajero_prueba, CONTRASEÑA: pasajero123
+ 	USUARIO: compañia_prueba, CONTRASEÑA: compañia123
+ 	USUARIO: DGAC, CONTRASEÑA: admin
+
+Cabe mencionar que para el atributo 'valor' de la tabla vuelos correspondiente a aquellos vuelos que se aprueban, se cacluló de la siguiente manera:
+
+	valor = peso*1000
