@@ -4,19 +4,28 @@ $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 
 if ($request_method == 'POST') {
 
-    $code = $_POST["codigo"];
-
     if (isset($_POST["aceptado"])) {
         $respuesta = "aceptado";
+        $code = $_POST["aceptado"];
 
         $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
         $result = $db1 -> prepare($query);
-        $result -> execute();} 
+        $result -> execute();
+        
+        // $query = "UPDATE vuelos SET estado = 'aceptado' WHERE codigo = '$code';";
+        // $result = $db2 -> prepare($query);
+        // $result -> execute();
+    } 
         else {
             $respuesta = "rechazado";
+            $code = $_POST["rechazado"];
             $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
             $result = $db1 -> prepare($query);
             $result -> execute();
+
+            // $query = "UPDATE vuelos SET estado = 'rechazado' WHERE codigo = '$code';";
+            // $result = $db2 -> prepare($query);
+            // $result -> execute();
     }
     go_admin();
 } elseif ($request_method == 'GET') {
@@ -90,8 +99,8 @@ $data = $result -> fetchAll();
                                             <td>$d[6]</td>
                                             <td>$d[7]</td>" ?>
                                             <td>
-                                            <button type="submit" name="aceptado" class="btn btn-secondary">ACEPTAR</button>
-                                            <button type="submit" name="rechazado" class="btn btn-secondary">RECHAZAR</button></form>
+                                            <button type="submit" name="aceptado" value="<?php$d[1]?>" class="btn btn-secondary">ACEPTAR</button>
+                                            <button type="submit" name="rechazado" value="<?php$d[1]?>" class="btn btn-secondary">RECHAZAR</button></form>
                                             </td>
                                             <?php echo"
                                         </tr>

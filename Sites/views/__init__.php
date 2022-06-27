@@ -12,7 +12,7 @@ function go_home() {
 };
 
 function go_inicio() {
-    header("Location: https://codd.ing.puc.cl/~grupo25/views/inicio.php");
+    header("Location: https://codd.ing.puc.cl/~grupo25/views/user_nav.php");
     exit();
 };
 
