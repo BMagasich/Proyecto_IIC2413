@@ -10,7 +10,7 @@ if ($request_method == 'POST') {
 
     $query = "SELECT *
             FROM vuelo  
-            WHERE aerodromo_salida_id = '$ciudad_salida' AND aerodromo_llegada_id = '$ciudad_llegada' AND fecha_salida = '$fecha' AND (estado = 'aceptado' OR estado = 'publicado');";
+            WHERE aerodromo_salida_id = $ciudad_salida AND aerodromo_llegada_id = $ciudad_llegada AND fecha_salida = '$fecha' AND (estado = 'aceptado' OR estado = 'publicado');";
     $result = $db1 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
