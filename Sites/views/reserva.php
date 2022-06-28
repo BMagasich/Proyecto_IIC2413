@@ -68,22 +68,6 @@ if ($request_method == 'POST') {
                         </select>
                         </div>
 
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Right-aligned menu
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <?php
-                                foreach ($salida as $s) {
-                                    echo "<button class=\"dropdown-item\" type=\"button\" value=$s[1]>$s[0]</button>";
-                                }
-                                ?>
-                                <button class="dropdown-item" type="button">Action</button>
-                                <button class="dropdown-item" type="button">Another action</button>
-                                <button class="dropdown-item" type="button">Something else here</button>
-                            </div>
-                        </div>
-
                         <div style="color: #fff"> <a> Ciudad llegada </a> </div>
                         <div>
                         <select name="ciudad_llegada" >
@@ -94,6 +78,8 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
+                        </div>
+                        <div class="input-group mb-3">
                         <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                     </div>
                     <div class="input-group-append">
