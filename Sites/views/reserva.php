@@ -69,8 +69,8 @@ if ($request_method == 'POST') {
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <?php
-                                foreach ($salida as $s) {
-                                    echo " <a class='dropdown-item' value='$s[1]'>$s[0]</a>";
+                                foreach ($salida as $s) { ?>
+                                    <a class="dropdown-item" value=<?php echo "$s[1]"?>><?php echo "$s[0]"?></a><?php ;
                                 }
                                 ?>
                         </div>
