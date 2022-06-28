@@ -37,12 +37,12 @@ if ($request_method == 'POST') {
 <?php
         require("../config/conection.php");
 
-        $query = "SELECT aerodromos.ciudad, aerodromos.id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE estado = 'aceptado';";
+        $query = "SELECT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE estado = 'aceptado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $salida = $result -> fetchAll();
 
-        $query = "SELECT aerodromos.ciudad, aerodromos.id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE estado = 'aceptado';";
+        $query = "SELECT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE estado = 'aceptado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $llegada = $result -> fetchAll();
@@ -85,7 +85,7 @@ if ($request_method == 'POST') {
                         </select>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="text" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                     </div>
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary">Filtrar</button>
