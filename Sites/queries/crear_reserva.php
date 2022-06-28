@@ -1,6 +1,6 @@
 <?php
     require("../config/conection.php");
-    $id = $_POST["id"];
+    $id = intval(mixed $_POST["id"]);
     $pasaporte_comprador = $_SESSION["username"];
     $pasaporte1 = $_POST["input_p1"];
     $pasaporte2 = $_POST["input_p2"];
