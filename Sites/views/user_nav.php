@@ -1,7 +1,6 @@
 <?php 
 require '__init__.php';
 include('../templates/header.html'); 
-
 ?>
 
 
@@ -43,7 +42,7 @@ include('../templates/header.html');
         // $query = "SELECT *
         $query = "SELECT *
                   FROM reserva
-                  WHERE pasaporte_comprador = $usuario;"; // Crear la consulta
+                  WHERE pasaporte_comprador = '$usuario';"; // Crear la consulta
         $result = $db1 -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();

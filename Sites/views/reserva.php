@@ -1,4 +1,7 @@
 <?php
+require '__init__.php';
+$request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
+
 if ($request_method == 'POST') {
 
     $ciudad_salida = $_POST["ciudad_salida"];
@@ -126,6 +129,16 @@ if ($request_method == 'POST') {
                             </tbody>
                             <?php } else {?>
                             <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>codigo</th>
+                                    <th>compañía</th>
+                                    <th>fecha_salida</th>
+                                    <th>fecha_llegada</th>
+                                    <th>aeronave</th>
+                                    <th>aerodromo_salida</th>
+                                    <th>aerodromo_llegada</th>
+                                </tr>
                             </thead>
                             <tbody>
                             </tbody>
