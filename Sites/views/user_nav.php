@@ -34,7 +34,7 @@
     <?php
         require("../config/conection.php");
 
-        $usuario = $_SESSION["username"]
+        $usuario = $_SESSION["username"];
         // $query = "SELECT *
         $query = "SELECT *
                   FROM reserva

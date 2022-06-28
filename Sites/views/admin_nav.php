@@ -8,6 +8,8 @@ if ($request_method == 'POST') {
         $respuesta = "aceptado";
         $code = $_POST["aceptado"];
 
+        go_inicio()
+
         $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
         $result = $db1 -> prepare($query);
         $result -> execute();
@@ -19,6 +21,9 @@ if ($request_method == 'POST') {
         else {
             $respuesta = "rechazado";
             $code = $_POST["rechazado"];
+
+            go_admin()
+
             $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
             $result = $db1 -> prepare($query);
             $result -> execute();
@@ -36,11 +41,11 @@ include('../templates/header.html'); ?>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.php">Proyecto Grupo 92: Cuenta de Administrador</a>
+                <a class="navbar-brand" href="user_nav.php">Proyecto Grupo 92: Bienvenido <?php echo $_SESSION["username"]?></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../index.php">Cerrar Sesion</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="logout.php">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,9 +94,8 @@ $data = $result -> fetchAll();
                                 foreach ($data as $d) { ?>
                                 <form method="post">
                                     <?php echo "<tr>
-                                            <td>$d[0]</td>" ?>
-                                            <td><?php echo "$d[1]" ?></td>
-                                            <?php echo"
+                                            <td>$d[0]</td>
+                                            <td>$d[1]</td>
                                             <td>$d[2]</td>
                                             <td>$d[3]</td>
                                             <td>$d[4]</td>
