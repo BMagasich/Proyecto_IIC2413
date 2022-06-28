@@ -26,5 +26,10 @@ function go_comp() {
     exit();
 };
 
+function go_reserva() {
+    header("Location: https://codd.ing.puc.cl/~grupo25/views/reserva.php");
+    exit();
+};
+
 
 ?>

@@ -17,6 +17,8 @@ if ($request_method == 'POST') {
 
     $_SESSION["filtrado"] = $data;
 
+    go_reserva();
+
 } elseif ($request_method == 'GET') {
     include('../templates/header.html'); ?>
 <body>
@@ -57,7 +59,7 @@ if ($request_method == 'POST') {
                     <div class="input-group mb-3">
                         <select name="ciudad_salida" placeholder="Ciudad Salida">
                             <?php
-                            foreach ($salida as $s) {?>
+                            foreach ($salida as $s) {
                                 echo "<option value=$l[1]>$l[0]</option>";
                             }
                             ?>
