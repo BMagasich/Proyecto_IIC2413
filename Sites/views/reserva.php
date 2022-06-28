@@ -57,6 +57,7 @@ if ($request_method == 'POST') {
                     <div class="panel-heading" align="center">
                     <form method="post">
                     <div class="input-group mb-3">
+                        <div>
                         <select name="ciudad_salida" placeholder="Ciudad Salida">
                             <?php
                             foreach ($salida as $s) {
@@ -64,7 +65,8 @@ if ($request_method == 'POST') {
                             }
                             ?>
                         </select>
-
+                        </div>
+                        <div>
                         <select name="ciudad_llegada" placeholder="Ciudad Llegada">
                             <?php
                             foreach ($llegada as $l) {
@@ -72,6 +74,7 @@ if ($request_method == 'POST') {
                             }
                             ?>
                         </select>
+                        </div>
                     </div>
                     <div class="input-group mb-3">
                         <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
