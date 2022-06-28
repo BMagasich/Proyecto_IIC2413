@@ -57,7 +57,7 @@ if ($request_method == 'POST') {
                     <div class="panel-heading" align="center">
                     <form method="post">
                     <div class="input-group mb-3">
-                        <div style="color: #fff"> <a> Ciudad Salida </a> </div>
+                        <div style="color: #fff" class="btn-group"> <a> Ciudad Salida </a> </div>
                         <div>
                         <select name="ciudad_salida" class="btn-group">
                             <?php
@@ -67,7 +67,7 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
-                        <div style="color: #fff"> <a> Ciudad llegada </a> </div>
+                        <div style="color: #fff" class="btn-group"> <a> Ciudad llegada </a> </div>
                         <div>
                         <select name="ciudad_llegada" class="btn-group">
                             <?php
@@ -77,7 +77,7 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
-                        <div>
+                        <div class="btn-group">
                         <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                         </div>
                     </div>
