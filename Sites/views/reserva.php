@@ -105,29 +105,27 @@ if ($request_method == 'POST') {
                             <tbody>
                             <?php
                                 foreach ($data as $d) { ?>
-                                    <?php echo "<tr>"?>
-                                    <form method="post" action="../queries/crear_reserva.php">
-                                    <?php echo "
-                                        <td>$d[0]</td>
+                                    <?php echo "<tr>
+                                    <form method=\"post\" action=\"../queries/crear_reserva.php\">
+                                        <td name=\"id\">$d[0]</td>
                                         <td>$d[4]</td>
                                         <td>$d[12]</td>
                                         <td>$d[6]</td>
                                         <td>$d[7]</td>
                                         <td>$d[5]</td>
                                         <td>$d[1]</td>
-                                        <td>$d[2]</td>" ?>
+                                        <td>$d[2]</td>
                                         <td>
-                                        <div class="input-group mb-3">
-                                        <input type="text" name="input_p1" class="form-control" placeholder="pasaporte 1" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <input type="text" name="input_p2" class="form-control" placeholder="pasaporte 2" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <input type="text" name="input_p3" class="form-control" placeholder="pasaporte 3" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                        <button type="submit" class="btn btn-secondary">Reservar</button>
+                                        <div class=\"input-group mb-3\">
+                                        <input type=\"text\" name=\"input_p1\" class=\"form-control\" placeholder=\"pasaporte 1\" aria-label=\"Recipient's username\" aria-describedby=\"basic-addon2\">
+                                        <input type=\"text\" name=\"input_p2\" class=\"form-control\" placeholder=\"pasaporte 2\" aria-label=\"Recipient's username\" aria-describedby=\"basic-addon2\">
+                                        <input type=\"text\" name=\"input_p3\" class=\"form-control\" placeholder=\"pasaporte 3\" aria-label=\"Recipient's username\" aria-describedby=\"basic-addon2\">
+                                        <div class=\"input-group-append\">
+                                        <button type=\"submit\" class=\"btn btn-secondary\">Reservar</button>
                                         </div>
                                         </div>
                                         </form>
                                         </td>
-                                        <?php echo"
                                         </tr>
                                         </form>";
                                     }?>
