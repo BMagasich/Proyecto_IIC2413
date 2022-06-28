@@ -10,7 +10,7 @@ if ($request_method == 'POST') {
 
     $query = "SELECT *
             FROM vuelo  
-            WHERE aerodromo_salida_id = '$ciudad_salida' AND aerodromo_llegada_id = '$ciudad_llegada' AND fecha_salida = '$fecha' AND estado = 'aceptado';";
+            WHERE aerodromo_salida_id = '$ciudad_salida' AND aerodromo_llegada_id = '$ciudad_llegada' AND fecha_salida = '$fecha' AND (estado = 'aceptado' OR estado = 'publicado');";
     $result = $db1 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
@@ -39,12 +39,12 @@ if ($request_method == 'POST') {
 <?php
         require("../config/conection.php");
 
-        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE (estado = 'aceptado' OR estado = 'publicado');";
+        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE estado = 'aceptado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $salida = $result -> fetchAll();
 
-        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE (estado = 'aceptado' OR estado = 'publicado');";
+        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE estado = 'aceptado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $llegada = $result -> fetchAll();
