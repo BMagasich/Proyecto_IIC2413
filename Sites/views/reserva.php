@@ -58,7 +58,7 @@ if ($request_method == 'POST') {
                         <select name="ciudad_salida">
                             <?php
                             foreach ($salida as $s) {
-                                echo "<option value=$s[1]>$s[0]</option>";
+                                echo "<option value='$s[1]'>$s[0]</option>";
                             }
                             ?>
                         </select>
@@ -69,9 +69,9 @@ if ($request_method == 'POST') {
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <?php
-                                foreach ($salida as $s) {?>
-                                    <a class="dropdown-item" value=<?php echo "$s[1]"?>> <?php echo "$s[0]"?></a><?php;
-                                }
+                                foreach ($salida as $s) {
+                                    echo " <a class='dropdown-item' value='$s[1]'>$s[0]</a>"
+                                };
                                 ?>
                         </div>
                     </div>
