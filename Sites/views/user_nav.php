@@ -24,7 +24,7 @@
                 <div class="col-lg-6">
                     <div class="text-center my-5">
                         <h1 class="display-5 fw-bolder text-white mb-2">Usuario XX</h1>
-                        <p class="lead text-white-50 mb-4">Pasaporte: <?php echo $_SESSION["username"]?></p>
+                        <p class="lead text-white-50 mb-4">Pasaporte: <?php echo "$_SESSION['username']"?></p>
                     </div>
                 </div>
             </div>
