@@ -79,7 +79,7 @@ if ($request_method == 'POST') {
                         </select>
                         </div>
                         </div>
-                        <div class="input-group mb-3">
+                    <div class="input-group mb-3">
                         <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                     </div>
                     <div class="input-group-append">
