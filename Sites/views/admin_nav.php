@@ -12,9 +12,9 @@ if ($request_method == 'POST') {
         $result = $db1 -> prepare($query);
         $result -> execute();
         
-        // $query = "UPDATE vuelos SET estado = 'aceptado' WHERE codigo = '$code';";
-        // $result = $db2 -> prepare($query);
-        // $result -> execute();
+        $query = "UPDATE vuelos SET estado = 'aceptado' WHERE codigo = '$code';";
+        $result = $db2 -> prepare($query);
+        $result -> execute();
     } 
         else {
             $respuesta = "rechazado";
@@ -24,9 +24,9 @@ if ($request_method == 'POST') {
             $result = $db1 -> prepare($query);
             $result -> execute();
 
-            // $query = "UPDATE vuelos SET estado = 'rechazado' WHERE codigo = '$code';";
-            // $result = $db2 -> prepare($query);
-            // $result -> execute();
+            $query = "UPDATE vuelos SET estado = 'rechazado' WHERE codigo = '$code';";
+            $result = $db2 -> prepare($query);
+            $result -> execute();
     }
     go_admin();
 } elseif ($request_method == 'GET') {

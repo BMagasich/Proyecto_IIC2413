@@ -28,9 +28,9 @@ $result -> execute();
 $data = $result -> fetchAll();
 ?>
 
-        <div class="container">
+    <div class="container">
         <div class="row">
-            <div class="col-md-offset-1 col-md-10">
+            <div class="col-md-offset-1 col-md-6">
                 <div class="panel">
                     <div class="panel-heading" align="center">
                             <div class="col col-sm-3 col-xs-12">
@@ -79,14 +79,8 @@ $data = $result -> fetchAll();
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     
 <?php
-
-require("../config/conection.php");
-
-// $query = "SELECT *
 $query = "SELECT *
         FROM vuelo
         WHERE lower(estado) = 'rechazado';"; // Crear la consulta
@@ -96,9 +90,7 @@ $result -> execute();
 $data = $result -> fetchAll();
 ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-offset-1 col-md-10">
+            <div class="col-md-offset-1 col-md-6">
                 <div class="panel">
                     <div class="panel-heading" align="center">
                             <div class="col col-sm-3 col-xs-12">
