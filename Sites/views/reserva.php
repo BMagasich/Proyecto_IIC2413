@@ -57,25 +57,29 @@ if ($request_method == 'POST') {
                     <div class="panel-heading" align="center">
                     <form method="post">
                     <div class="input-group mb-3">
-                        <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ciudad Salida
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <?php foreach ($salida as $s) {
-                            echo "<button class=\"dropdown-item\" type=\"button\" value=$s[1]>$s[0]</button>";}?>
+                        <div style="color: #fff"> <a> Ciudad Salida </a> </div>
+                        <div>
+                        <select name="ciudad_salida" class="btn-group">
+                            <?php
+                            foreach ($salida as $s) {
+                                echo "<option value=$s[1]>$s[0]</option>";
+                            }
+                            ?>
+                        </select>
                         </div>
+                        <div style="color: #fff"> <a> Ciudad llegada </a> </div>
+                        <div>
+                        <select name="ciudad_llegada" class="btn-group">
+                            <?php
+                            foreach ($llegada as $l) {
+                                echo "<option value=$l[1]>$l[0]</option>";
+                            }
+                            ?>
+                        </select>
                         </div>
-                        <div class="btn-group">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ciudad Llegada
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <?php foreach ($llegada as $l) {
-                            echo "<button class=\"dropdown-item\" type=\"button\" value=$l[1]>$l[0]</button>";}?>
-                        </div>
-                        </div>
+                        <div>
                         <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                        </div>
                     </div>
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary">Filtrar</button>
