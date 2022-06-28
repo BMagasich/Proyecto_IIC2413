@@ -62,6 +62,18 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                     </div>
+                    <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ciudad Salida
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <?php
+                                foreach ($salida as $s) {?>
+                                    <a class="dropdown-item" value=<?php echo "$s[1]"?>> <?php echo "$s[0]"?></a><?php;
+                                }
+                                ?>
+                        </div>
+                    </div>
                     <div class="input-group mb-3">
                         <select name="ciudad_llegada">
                             <?php
