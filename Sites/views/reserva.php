@@ -57,9 +57,9 @@ if ($request_method == 'POST') {
                     <div class="panel-heading" align="center">
                     <form method="post">
                     <div class="input-group mb-3">
-                        <div style="color: #fff" class="btn-group"> <a> Ciudad Salida </a> </div>
+                        <?php echo "<div style=\"color: #fff\"> <a> Ciudad Salida </a> </div>";?>
                         <div>
-                        <select name="ciudad_salida" class="btn-group">
+                        <select name="ciudad_salida" >
                             <?php
                             foreach ($salida as $s) {
                                 echo "<option value=$s[1]>$s[0]</option>";
@@ -67,9 +67,9 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
-                        <div style="color: #fff" class="btn-group"> <a> Ciudad llegada </a> </div>
+                        <div style="color: #fff"> <a> Ciudad llegada </a> </div>
                         <div>
-                        <select name="ciudad_llegada" class="btn-group">
+                        <select name="ciudad_llegada" >
                             <?php
                             foreach ($llegada as $l) {
                                 echo "<option value=$l[1]>$l[0]</option>";
@@ -77,9 +77,7 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
-                        <div class="btn-group">
                         <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-                        </div>
                     </div>
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-secondary">Filtrar</button>
