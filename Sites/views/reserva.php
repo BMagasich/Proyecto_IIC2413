@@ -59,7 +59,7 @@ if ($request_method == 'POST') {
                     <div class="input-group mb-3">
                         <?php echo "<div style=\"color: #fff\"> <a> Ciudad Salida </a> </div>";?>
                         <div>
-                        <select name="ciudad_salida" >
+                        <select name="ciudad_salida">
                             <?php
                             foreach ($salida as $s) {
                                 echo "<option value=$s[1]>$s[0]</option>";
@@ -67,6 +67,23 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Right-aligned menu
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <?php
+                                foreach ($salida as $s) {
+                                    echo "<button class=\"dropdown-item\" type=\"button\" value=$s[1]>$s[0]</button>";
+                                }
+                                ?>
+                                <button class="dropdown-item" type="button">Action</button>
+                                <button class="dropdown-item" type="button">Another action</button>
+                                <button class="dropdown-item" type="button">Something else here</button>
+                            </div>
+                        </div>
+
                         <div style="color: #fff"> <a> Ciudad llegada </a> </div>
                         <div>
                         <select name="ciudad_llegada" >
