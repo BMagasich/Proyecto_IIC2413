@@ -56,8 +56,8 @@ if ($request_method == 'POST') {
                 <div class="panel">
                     <div class="panel-heading" align="center">
                     <form method="post">
-                    <div class="input-group mb-3">
-                        <div class="form-control"> <a> Ciudad Salida </a> </div>
+                    <div class="form-control">
+                        <div> <a> Ciudad Salida </a> </div>
                         <div>
                         <select name="ciudad_salida" >
                             <?php
@@ -67,7 +67,7 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
-                        <div class="form-control"> <a> Ciudad llegada </a> </div>
+                        <div> <a> Ciudad llegada </a> </div>
                         <div>
                         <select name="ciudad_llegada" >
                             <?php
