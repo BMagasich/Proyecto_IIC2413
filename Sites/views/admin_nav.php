@@ -103,8 +103,8 @@ $data = $result -> fetchAll();
                                             <td>$d[6]</td>
                                             <td>$d[7]</td>" ?>
                                             <td>
-                                            <button type="submit" name="aceptado" value="<?php$d[1]?>" class="btn btn-secondary">ACEPTAR</button>
-                                            <button type="submit" name="rechazado" value="<?php$d[1]?>" class="btn btn-secondary">RECHAZAR</button></form>
+                                            <button type="submit" name="aceptado" value=<?php$d[1]?> class="btn btn-secondary">ACEPTAR</button>
+                                            <button type="submit" name="rechazado" value=<?php$d[1]?> class="btn btn-secondary">RECHAZAR</button>
                                             </td>
                                             <?php echo"
                                         </tr>

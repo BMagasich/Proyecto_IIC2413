@@ -1,9 +1,9 @@
 <?php
 if ($request_method == 'POST') {
 
-    $ciudad_salida = $_POST["ciudad_salida"]
-    $ciudad_llegada = $_POST["ciudad_llegada"]
-    $fecha = $_POST["fecha_despegue"]
+    $ciudad_salida = $_POST["ciudad_salida"];
+    $ciudad_llegada = $_POST["ciudad_llegada"];
+    $fecha = $_POST["fecha_despegue"];
 
     $query = "SELECT *
             FROM vuelo  
@@ -12,7 +12,7 @@ if ($request_method == 'POST') {
     $result -> execute();
     $data = $result -> fetchAll();
 
-    $_SESSION["filtrado"] = $data
+    $_SESSION["filtrado"] = $data;
 
 } elseif ($request_method == 'GET') {
     include('../templates/header.html'); ?>
@@ -99,7 +99,8 @@ if ($request_method == 'POST') {
                                 foreach ($data as $d) { ?>
                                     <?php echo "<tr>"?>
                                     <form method="post" action="../queries/crear_reserva.php">
-                                        <td name="id"><?php echo "$d[0]</td>
+                                    <?php echo "
+                                        <td>$d[0]</td>
                                         <td>$d[4]</td>
                                         <td>$d[12]</td>
                                         <td>$d[6]</td>
