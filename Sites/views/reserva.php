@@ -54,7 +54,7 @@ if ($request_method == 'POST') {
                         <select name="ciudad_salida">
                             <?php
                             foreach ($salida as $s) {
-                                echo "<option value=$s[1]>$s[0]</option>"
+                                echo "<option value=$s[1]>$s[0]</option>";
                             }
                             ?>
                         </select>
@@ -63,7 +63,7 @@ if ($request_method == 'POST') {
                         <select name="ciudad_llegada">
                             <?php
                             foreach ($llegada as $l) {
-                                echo "<option value=$l[1]>$l[0]</option>"
+                                echo "<option value=$l[1]>$l[0]</option>";
                             }
                             ?>
                         </select>
@@ -129,7 +129,7 @@ if ($request_method == 'POST') {
                             </thead>
                             <tbody>
                             </tbody>
-                            <?php }?>
+                            <?php ;}?>
                         </table>
                     </div>
                     <div class="panel-footer">
