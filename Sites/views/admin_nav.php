@@ -8,9 +8,7 @@ if ($request_method == 'POST') {
         $respuesta = "aceptado";
         $code = $_POST["aceptado"];
 
-        $_SESSION["username"] = $_POST["aceptado"];
-
-        $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
+        $query = "SELECT admin_propuestas($code, $respuesta);";
         $result = $db1 -> prepare($query);
         $result -> execute();
         
@@ -22,9 +20,7 @@ if ($request_method == 'POST') {
             $respuesta = "rechazado";
             $code = $_POST["rechazado"];
 
-            $_SESSION["username"] = $_POST["rechazado"];
-
-            $query = "SELECT * FROM admin_propuestas($code, $respuesta);";
+            $query = "SELECT admin_propuestas($code, $respuesta);";
             $result = $db1 -> prepare($query);
             $result -> execute();
 
@@ -41,7 +37,7 @@ include('../templates/header.html'); ?>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
-                <a class="navbar-brand" href="user_nav.php">Proyecto Grupo 92: Bienvenido {<?php echo $_SESSION["username"]?>}</a>
+                <a class="navbar-brand" href="user_nav.php">Proyecto Grupo 92: Bienvenido <?php echo $_SESSION["username"]?></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
