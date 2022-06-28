@@ -57,9 +57,9 @@ if ($request_method == 'POST') {
                     <div class="panel-heading" align="center">
                     <form method="post">
                     <div class="input-group mb-3">
-                        <div class="input-group-append"> <a> Ciudad Salida </a> </div>
+                        <div class="form-control"> <a> Ciudad Salida </a> </div>
                         <div>
-                        <select name="ciudad_salida" placeholder="Ciudad Salida">
+                        <select name="ciudad_salida" >
                             <?php
                             foreach ($salida as $s) {
                                 echo "<option value=$s[1]>$s[0]</option>";
@@ -67,9 +67,9 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
-                        <div class="input-group-append"> <a> Ciudad llegada </a> </div>
+                        <div class="form-control"> <a> Ciudad llegada </a> </div>
                         <div>
-                        <select name="ciudad_llegada" placeholder="Ciudad Llegada">
+                        <select name="ciudad_llegada" >
                             <?php
                             foreach ($llegada as $l) {
                                 echo "<option value=$l[1]>$l[0]</option>";
@@ -77,8 +77,6 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                         </div>
-                    </div>
-                    <div class="input-group mb-3">
                         <input type="date" name="fecha_despegue" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                     </div>
                     <div class="input-group-append">
