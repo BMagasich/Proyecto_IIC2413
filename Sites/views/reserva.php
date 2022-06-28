@@ -55,20 +55,18 @@ if ($request_method == 'POST') {
                     <div class="panel-heading" align="center">
                     <form method="post">
                     <div class="input-group mb-3">
-                        <select name="ciudad_salida" class="form-control" placeholder="Ciudad llegada">
+                        <select name="ciudad_salida" placeholder="Ciudad Salida">
                             <?php
                             foreach ($salida as $s) {
-                                echo "<option class='form-control' value=$s[1]>$s[0]</option>";
+                                echo "<option value=$s[1]>$s[0]</option>";
                             }
                             ?>
                         </select>
-                    </div>
 
-                    <div class="input-group mb-3">
-                        <select name="ciudad_llegada" class="form-control" placeholder="Ciudad llegada">
+                        <select name="ciudad_llegada" placeholder="Ciudad Llegada">
                             <?php
                             foreach ($llegada as $l) {
-                                echo "<option class='form-control' value=$l[1]>$l[0]</option>";
+                                echo "<option value=$l[1]>$l[0]</option>";
                             }
                             ?>
                         </select>
