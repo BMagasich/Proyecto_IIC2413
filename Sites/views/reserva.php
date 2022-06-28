@@ -37,12 +37,12 @@ if ($request_method == 'POST') {
 <?php
         require("../config/conection.php");
 
-        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE estado = 'aceptado';";
+        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE estado = 'aceptado' OR estado = 'publicado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $salida = $result -> fetchAll();
 
-        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE estado = 'aceptado';";
+        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE estado = 'aceptado' OR estado = 'publicado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $llegada = $result -> fetchAll();
@@ -57,8 +57,8 @@ if ($request_method == 'POST') {
                     <div class="input-group mb-3">
                         <select name="ciudad_salida" placeholder="Ciudad Salida">
                             <?php
-                            foreach ($salida as $s) {
-                                echo "<option value=$s[1]>$s[0]</option>";
+                            foreach ($salida as $s) {?>
+                                <option class="dropdown-item" value=<?php echo "$s[1]"?>><?php echo "$s[0]"?></option><?php echo ;
                             }
                             ?>
                         </select>
