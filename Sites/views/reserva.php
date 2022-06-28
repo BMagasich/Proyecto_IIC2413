@@ -61,7 +61,7 @@ if ($request_method == 'POST') {
                         <select name="ciudad_salida" placeholder="Ciudad Salida">
                             <?php
                             foreach ($salida as $s) {
-                                echo "<option value=$l[1]>$l[0]</option>";
+                                echo "<option value=$s[1]>$s[0]</option>";
                             }
                             ?>
                         </select>
