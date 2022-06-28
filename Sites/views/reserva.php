@@ -58,7 +58,7 @@ if ($request_method == 'POST') {
                         <select name="ciudad_salida">
                             <?php
                             foreach ($salida as $s) {
-                                echo "<option value='$s[1]'>$s[0]</option>";
+                                echo "<option value=$s[1]>$s[0]</option>";
                             }
                             ?>
                         </select>
