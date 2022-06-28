@@ -8,7 +8,7 @@ if ($request_method == 'POST') {
         $respuesta = "aceptado";
         $code = $_POST["aceptado"];
 
-        $query = "SELECT admin_propuestas($code, $respuesta);";
+        $query = "SELECT * FROM admin_propuestas('$code', '$respuesta');";
         $result = $db1 -> prepare($query);
         $result -> execute();
         
@@ -20,7 +20,7 @@ if ($request_method == 'POST') {
             $respuesta = "rechazado";
             $code = $_POST["rechazado"];
 
-            $query = "SELECT admin_propuestas($code, $respuesta);";
+            $query = "SELECT * FROM admin_propuestas('$code', '$respuesta');";
             $result = $db1 -> prepare($query);
             $result -> execute();
 
