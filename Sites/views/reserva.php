@@ -37,12 +37,12 @@ if ($request_method == 'POST') {
 <?php
         require("../config/conection.php");
 
-        $query = "SELECT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE estado = 'aceptado';";
+        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_salida = aerodromo_id WHERE estado = 'aceptado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $salida = $result -> fetchAll();
 
-        $query = "SELECT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE estado = 'aceptado';";
+        $query = "SELECT DISTINCT aerodromos.ciudad, aerodromos.aerodromo_id FROM vuelos JOIN aerodromos ON aerodromo_llegada = aerodromo_id WHERE estado = 'aceptado';";
         $result = $db2 -> prepare($query);
         $result -> execute();
         $llegada = $result -> fetchAll();
@@ -55,7 +55,7 @@ if ($request_method == 'POST') {
                     <div class="panel-heading" align="center">
                     <form method="post">
                     <div class="input-group mb-3">
-                        <select name="ciudad_salida">
+                        <select name="ciudad_salida" class="form-control">
                             <?php
                             foreach ($salida as $s) {
                                 echo "<option value=$s[1]>$s[0]</option>";
@@ -63,20 +63,9 @@ if ($request_method == 'POST') {
                             ?>
                         </select>
                     </div>
-                    <div class="dropdown show">
-                        <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Ciudad Salida
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <?php
-                                foreach ($salida as $s) { ?>
-                                    <a class="dropdown-item" value=<?php echo "$s[1]"?>><?php echo "$s[0]"?></a><?php ;
-                                }
-                                ?>
-                        </div>
-                    </div>
+
                     <div class="input-group mb-3">
-                        <select name="ciudad_llegada">
+                        <select name="ciudad_llegada" class="form-control">
                             <?php
                             foreach ($llegada as $l) {
                                 echo "<option value=$l[1]>$l[0]</option>";
