@@ -5,7 +5,7 @@ $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method == 'POST') {
 
     if (isset($_POST["filtrado"])) {
-        
+
         $_SESSION["admin_filtro"] = "filtrado";
 
         $start = $_POST["start"];
@@ -69,8 +69,8 @@ if ($_SESSION["admin_filtro"] == "filtrado"){
     
     $_SESSION["admin_filtro"] = "no filtrado";
 
-    $start = $_SESSION["start"]
-    $end = $_SESSION["end"]
+    $start = $_SESSION["start"];
+    $end = $_SESSION["end"];
 
     $query = "SELECT *
             FROM vuelos
