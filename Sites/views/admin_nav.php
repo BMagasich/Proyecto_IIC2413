@@ -10,6 +10,19 @@ if ($request_method == 'POST') {
 
         $end = $_POST["end"];
 
+        if (empty($start) or empty($end)) {
+            $query = "SELECT *
+                FROM vuelos
+                WHERE lower(estado) = 'pendiente';"; // Crear la consulta
+            $result = $db2 -> prepare($query);
+            $result -> execute();
+            $data = $result -> fetchAll();
+
+            $_SESSION["admin_filtro"] = $data;
+
+            go_admin();
+        } else {
+
         $query = "SELECT *
                 FROM vuelos
                 WHERE (lower(estado) = 'pendiente') AND (f_salida >= CAST('$start' AS date)) AND (f_salida <= CAST('$end' AS date));"; // Crear la consulta
@@ -19,7 +32,7 @@ if ($request_method == 'POST') {
 
         $_SESSION["admin_filtro"] = $data;
 
-        go_admin();
+        go_admin();}
 
     } elseif(isset($_POST["aceptado"])) {
         $respuesta = "aceptado";
@@ -112,7 +125,8 @@ require("../config/conection.php");
                             <tbody>
                             <?php
                             if (isset($_SESSION["admin_filtro"])) { 
-                                $data = $_SESSION["admin_filtro"];?>
+                                $data = $_SESSION["admin_filtro"];
+                                unset($_SESSION["admin_filtro"]);?>
                                 
                                 <form method="post">
                                     <?php foreach ($data as $d) {
@@ -132,7 +146,6 @@ require("../config/conection.php");
                                             <?php echo"
                                         </tr>
                                         </form>";}
-                                        unset($_SESSION["admin_filtro"]);
                                     } else {?>
                                             <form method="post">
                                                 <?php foreach ($data as $d) {
