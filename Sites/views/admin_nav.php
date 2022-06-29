@@ -16,7 +16,7 @@ if ($request_method == 'POST') {
 
         $query = "SELECT *
                 FROM vuelos
-                WHERE lower(estado) = 'pendiente' ;"; // Crear la consulta
+                WHERE lower(estado) = 'pendiente'AND fecha_salida >= CAST('2022-04-01', date) AND fecha_salida <=CAST('2022-04-30', date) ;"; // Crear la consulta
         $result = $db2 -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
@@ -94,8 +94,7 @@ require("../config/conection.php");
                     <div class="input-group mb-3">
                         <input type="date" name="start" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
                         <input type="date" name="end" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-                    </div>
-                    <div class="input-group-append">
+                    
                         <button type="submit" class="btn btn-secondary" name="filtrado">Filtrar</button>
                     </div>
                     <div class="panel-body table-responsive">
