@@ -5,23 +5,16 @@ $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 if ($request_method == 'POST') {
 
     if (isset($_POST["filtrado"])) {
+        
         $_SESSION["admin_filtro"] = "filtrado";
 
         $start = $_POST["start"];
         $start = $start.date("Y-m-d");
-        strval($start);
+        $_SESSION["start"] = strval($start);
 
         $end = $_POST["end"];
         $end = $end.date("Y-m-d");
-        strval($end);
-
-        $query = "SELECT *
-                FROM vuelos
-                WHERE lower(estado) = 'pendiente' AND fecha_salida >= CAST('%$start%' AS date) AND fecha_salida <= CAST('%$end%' AS date);"; // Crear la consulta
-        $result = $db2 -> prepare($query);
-        $result -> execute();
-
-        $_SESSION["data_filtrada"] = $result -> fetchAll();
+        $_SESSION["end"] = strval($end);
 
         go_admin();
 
@@ -73,16 +66,27 @@ require("../config/conection.php");
 
 // $query = "SELECT *
 if ($_SESSION["admin_filtro"] == "filtrado"){
-    $data = $_SESSION["data_filtrada"];
+    
     $_SESSION["admin_filtro"] = "no filtrado";
+
+    $start = $_SESSION["start"]
+    $end = $_SESSION["end"]
+
+    $query = "SELECT *
+            FROM vuelos
+            WHERE lower(estado) = 'pendiente' AND fecha_salida >= CAST('%$start%' AS date) AND fecha_salida <= CAST('%$end%' AS date);";
+    $result = $db2 -> prepare($query);
+    $result -> execute();
+    $data = $result -> fetchAll();
+
 } else {
     $query = "SELECT *
         FROM vuelos
         WHERE lower(estado) = 'pendiente';"; // Crear la consulta
-$result = $db2 -> prepare($query);
-$result -> execute();
+    $result = $db2 -> prepare($query);
+    $result -> execute();
 
-$data = $result -> fetchAll();}
+    $data = $result -> fetchAll();}
 ?>
 
         <div class="container">
