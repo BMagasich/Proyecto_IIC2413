@@ -74,7 +74,7 @@ if ($_SESSION["admin_filtro"] == "filtrado"){
 
     $query = "SELECT *
             FROM vuelos
-            WHERE lower(estado) = 'pendiente' AND fecha_salida >= CAST('2022-04-01' AS date) AND fecha_salida <= CAST('2022-04-30' AS date);";
+            WHERE lower(estado) = 'pendiente';";
     $result = $db2 -> prepare($query);
     $result -> execute();
     $data = $result -> fetchAll();
