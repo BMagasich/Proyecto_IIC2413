@@ -14,7 +14,7 @@ if ($request_method == 'POST') {
 
         $query = "SELECT *
                 FROM vuelos
-                WHERE lower(estado) = 'pendiente' AND CAST(fecha_salida, date) >= CAST($start, date) AND CAST(fecha_salida, date) <= CAST($end, date);"; // Crear la consulta
+                WHERE lower(estado) = 'pendiente' AND CAST(fecha_salida, date) >= CAST('$start', date) AND CAST(fecha_salida, date) <= CAST('$end', date);"; // Crear la consulta
         $result = $db2 -> prepare($query);
         $result -> execute();
 
