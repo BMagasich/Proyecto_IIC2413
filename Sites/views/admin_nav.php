@@ -9,8 +9,11 @@ if ($request_method == 'POST') {
 
         $start = $_POST["start"];
         $start = $start.date("Y-m-d");
+        strval($start);
+
         $end = $_POST["end"];
         $end = $end.date("Y-m-d");
+        strval($end);
 
         $query = "SELECT *
                 FROM vuelos
