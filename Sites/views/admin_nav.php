@@ -135,7 +135,7 @@ require("../config/conection.php");
                                             <?php echo"
                                         </tr>
                                         </form>";
-                                    }} else {
+                                    };} else {
                                         foreach ($data as $d) { ?>
                                             <form method="post">
                                                 <?php echo "<tr>
@@ -154,7 +154,7 @@ require("../config/conection.php");
                                                         <?php echo"
                                                     </tr>
                                                     </form>";
-                                    }?>
+                                    };}?>
                             </tbody>
                         </table>
                     </div>
