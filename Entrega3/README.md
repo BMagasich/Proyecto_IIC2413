@@ -14,11 +14,14 @@ ENTREGA 3:
  El método utilizado para las funcionalidades fueron procedimientos almacenados que se encuentran en Entrega3/sql/funciones.
  Cabe mencionar que par importar las bases de daros correspondientes se utilizó dblink en dichos archivos.
  
- Para poder realizar la corrección exiten incialmente los siguientes 3 usuarios de prueba:
+ Si se accede a la página y no se ha apretado el botón importar usuarios, a continuación se muestran 2 usuarios del tipo "compañía aérea" y "pasajero" respectivamente que pueden ser utilizados para corregir.
+
+	USERNAME    CONTRASEÑA   TIPO
+	 IBE      | 59f260e7   | Compañia Aerea
+	V03976673 | Mar67306   | Pasajero
+
  
- 	USUARIO: pasajero_prueba, CONTRASEÑA: pasajero123
- 	USUARIO: compañia_prueba, CONTRASEÑA: compañia123
- 	USUARIO: DGAC, CONTRASEÑA: admin
+ Para el caso en que ya se ha apretado el botón 'importar usuarios', estos usuarios anteriormente mencionados tendrán otras contraseñas, por lo que se deberá ingresar al servidor desde la consola y luego utilizar el comando "SELECT * FROM usuarios;" para seleccionar 2 de ellos al azar. Esto se debe a que cada vez que se utiliza este botón, se crean contraseñas aleatorias, por lo que no existen usuarios permanentes diferentes a Admin DGAC.
 
 Cabe mencionar que para el atributo 'valor' de la tabla vuelos correspondiente a aquellos vuelos que se aprueban, se cacluló de la siguiente manera:
 
