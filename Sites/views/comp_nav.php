@@ -1,4 +1,5 @@
-<?php include('../templates/header.html'); ?>
+<?php include('../templates/header.html'); 
+require '__init__.php';?>
 
 
     <body>

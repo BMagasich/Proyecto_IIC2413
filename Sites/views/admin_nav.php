@@ -4,7 +4,25 @@ $request_method = filter_input(INPUT_SERVER, 'REQUEST_METHOD');
 
 if ($request_method == 'POST') {
 
-    if (isset($_POST["aceptado"])) {
+    if (isset($_POST["filtrado"])) {
+        $_SESSION["admin_filtro"] = "filtrado";
+
+        $start = $_POST["start"];
+        $start = $start.date("Y-m-d");
+        $end = $_POST["end"];
+        $end = $end.date("Y-m-d");
+
+        $query = "SELECT *
+                FROM vuelos
+                WHERE lower(estado) = 'pendiente' AND CAST(fecha_salida, date) >= CAST($start, date) AND CAST(fecha_salida, date) <= CAST($end, date);"; // Crear la consulta
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+
+        $_SESSION["data_filtrada"] = $result -> fetchAll();
+
+        go_admin();
+
+    } elseif(isset($_POST["aceptado"])) {
         $respuesta = "aceptado";
         $code = $_POST["aceptado"];
 
@@ -51,13 +69,17 @@ include('../templates/header.html'); ?>
 require("../config/conection.php");
 
 // $query = "SELECT *
-$query = "SELECT *
+if ($_SESSION["admin_filtro"] == "filtrado"){
+    $data = $_SESSION["data_filtrada"];
+    $_SESSION["admin_filtro"] = "no filtrado";
+} else {
+    $query = "SELECT *
         FROM vuelos
         WHERE lower(estado) = 'pendiente';"; // Crear la consulta
 $result = $db2 -> prepare($query);
 $result -> execute();
 
-$data = $result -> fetchAll();
+$data = $result -> fetchAll();}
 ?>
 
         <div class="container">
@@ -68,6 +90,14 @@ $data = $result -> fetchAll();
                             <div class="col col-sm-3 col-xs-12">
                                 <h4 class="title">Propuestas Pendientes</h4>
                             </div>
+                    </div>
+                    <form method="post">
+                    <div class="input-group mb-3">
+                        <input type="date" name="start" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                        <input type="date" name="end" class="form-control" placeholder="dd/mm/yyyy" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                    </div>
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary" name="filtrado">Filtrar</button>
                     </div>
                     <div class="panel-body table-responsive">
                         <table class="table">
