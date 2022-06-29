@@ -6,15 +6,21 @@ if ($request_method == 'POST') {
 
     if (isset($_POST["filtrado"])) {
 
-        $_SESSION["admin_filtro"] = "filtrado";
-
         $start = $_POST["start"];
         $start = $start.date("Y-m-d");
-        $_SESSION["start"] = strval($start);
+        strval($start);
 
         $end = $_POST["end"];
         $end = $end.date("Y-m-d");
-        $_SESSION["end"] = strval($end);
+        strval($end);
+
+        $query = "SELECT *
+                FROM vuelos
+                WHERE lower(estado) = 'pendiente';"; // Crear la consulta
+        $result = $db2 -> prepare($query);
+        $result -> execute();
+
+        $_SESSION["admin_filtro"] = $result -> fetchAll();
 
         go_admin();
 
@@ -65,28 +71,13 @@ include('../templates/header.html'); ?>
 require("../config/conection.php");
 
 // $query = "SELECT *
-if ($_SESSION["admin_filtro"] == "filtrado"){
-    
-    $_SESSION["admin_filtro"] = "no filtrado";
-
-    $start = $_SESSION["start"];
-    $end = $_SESSION["end"];
-
-    $query = "SELECT *
-            FROM vuelos
-            WHERE lower(estado) = 'pendiente';";
-    $result = $db2 -> prepare($query);
-    $result -> execute();
-    $data = $result -> fetchAll();
-
-} else {
     $query = "SELECT *
         FROM vuelos
         WHERE lower(estado) = 'pendiente';"; // Crear la consulta
     $result = $db2 -> prepare($query);
     $result -> execute();
 
-    $data = $result -> fetchAll();}
+    $data = $result -> fetchAll();
 ?>
 
         <div class="container">
@@ -124,6 +115,8 @@ if ($_SESSION["admin_filtro"] == "filtrado"){
 
                             <tbody>
                             <?php
+                            if (isset($_SESSION["admin_filtro"])) { 
+                                $data = $_SESSION["admin_filtro"];
                                 foreach ($data as $d) { ?>
                                 <form method="post">
                                     <?php echo "<tr>
@@ -142,6 +135,25 @@ if ($_SESSION["admin_filtro"] == "filtrado"){
                                             <?php echo"
                                         </tr>
                                         </form>";
+                                    }} else {
+                                        foreach ($data as $d) { ?>
+                                            <form method="post">
+                                                <?php echo "<tr>
+                                                        <td>$d[0]</td>
+                                                        <td>$d[1]</td>
+                                                        <td>$d[2]</td>
+                                                        <td>$d[3]</td>
+                                                        <td>$d[4]</td>
+                                                        <td>$d[5]</td>
+                                                        <td>$d[6]</td>
+                                                        <td>$d[7]</td>" ?>
+                                                        <td>
+                                                        <button type="submit" name="aceptado" value=<?php echo "$d[1]"?> class="btn btn-secondary">ACEPTAR</button>
+                                                        <button type="submit" name="rechazado" value=<?php echo "$d[1]"?> class="btn btn-secondary">RECHAZAR</button>
+                                                        </td>
+                                                        <?php echo"
+                                                    </tr>
+                                                    </form>";
                                     }?>
                             </tbody>
                         </table>
