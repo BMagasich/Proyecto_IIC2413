@@ -16,11 +16,12 @@ if ($request_method == 'POST') {
 
         $query = "SELECT *
                 FROM vuelos
-                WHERE lower(estado) = 'pendiente';"; // Crear la consulta
+                WHERE lower(estado) = 'pendiente' ;"; // Crear la consulta
         $result = $db2 -> prepare($query);
         $result -> execute();
+        $data = $result -> fetchAll();
 
-        $_SESSION["admin_filtro"] = $result -> fetchAll();
+        $_SESSION["admin_filtro"] = $data;
 
         go_admin();
 
@@ -116,10 +117,11 @@ require("../config/conection.php");
                             <tbody>
                             <?php
                             if (isset($_SESSION["admin_filtro"])) { 
-                                $data = $_SESSION["admin_filtro"];
-                                foreach ($data as $d) { ?>
+                                $data = $_SESSION["admin_filtro"];?>
+                                
                                 <form method="post">
-                                    <?php echo "<tr>
+                                    <?php foreach ($data as $d) {
+                                        echo "<tr>
                                             <td>$d[0]</td>
                                             <td>$d[1]</td>
                                             <td>$d[2]</td>
@@ -134,11 +136,11 @@ require("../config/conection.php");
                                             </td>
                                             <?php echo"
                                         </tr>
-                                        </form>";
-                                    };} else {
-                                        foreach ($data as $d) { ?>
+                                        </form>";}
+                                    } else {?>
                                             <form method="post">
-                                                <?php echo "<tr>
+                                                <?php foreach ($data as $d) {
+                                                    echo "<tr>
                                                         <td>$d[0]</td>
                                                         <td>$d[1]</td>
                                                         <td>$d[2]</td>
@@ -153,8 +155,8 @@ require("../config/conection.php");
                                                         </td>
                                                         <?php echo"
                                                     </tr>
-                                                    </form>";
-                                    };}?>
+                                                    </form>";}
+                                    }?>
                             </tbody>
                         </table>
                     </div>
