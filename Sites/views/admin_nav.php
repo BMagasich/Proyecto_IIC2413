@@ -7,16 +7,12 @@ if ($request_method == 'POST') {
     if (isset($_POST["filtrado"])) {
 
         $start = $_POST["start"];
-        $start = $start.date("Y-m-d");
-        strval($start);
 
         $end = $_POST["end"];
-        $end = $end.date("Y-m-d");
-        strval($end);
 
         $query = "SELECT *
                 FROM vuelos
-                WHERE (lower(estado) = 'pendiente') AND (f_salida >= CAST('2022-04-01' AS date)) AND (f_salida <= CAST('2022-04-30' AS date));"; // Crear la consulta
+                WHERE (lower(estado) = 'pendiente') AND (f_salida >= CAST('$start' AS date)) AND (f_salida <= CAST('$end' AS date));"; // Crear la consulta
         $result = $db2 -> prepare($query);
         $result -> execute();
         $data = $result -> fetchAll();
